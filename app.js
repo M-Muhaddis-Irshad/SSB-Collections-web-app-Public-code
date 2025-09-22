@@ -1,3 +1,83 @@
+
+const heart = document.getElementById('heart');
+
+function like() {
+    if (!heart.classList.contains('fill')) {
+        heart.classList.add('fill');
+        heart.title = `UnLike`
+        return;
+    }
+    else {
+        heart.classList.remove('fill');
+        heart.title = `Like`
+    }
+}
+
+// NewsLetter Start's_____________________________________________________________
+
+const emailRagex = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+
+const subInp = document.getElementById('letterMail');
+
+function inputClr() {
+
+    if (!subInp.value.trim()) {
+        Swal.fire({
+            icon: "error",
+            title: "Input cannot be empty",
+            text: "Enter your email address"
+        });
+    }
+    else if (!emailRagex.test(subInp.value)) {
+        Swal.fire({
+            icon: "error",
+            title: "Email is not correct",
+            text: "Check your email address"
+        });
+    }
+    else {
+        Swal.fire({
+            icon: "success",
+            title: "Subscription confirmed!",
+            text: " You’ll now receive our latest news, tips, and updates straight to your email."
+        });
+        subInp.value = "";
+    }
+    
+}
+
+// NewsLetter End's_____________________________________________________________
+
+
+// Copy right claim date___________________________________
+const d = new Date();
+
+const year = document.getElementById('date').innerText = d.getFullYear();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // const products = [{
 //     title: "mobile-phone",
 //     price: "1200",

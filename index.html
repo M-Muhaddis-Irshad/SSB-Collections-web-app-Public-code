@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>S.S.B Collections</title>
 
     <!-- My CSS Link -->
     <link rel="stylesheet" href="style.css">
@@ -14,6 +14,12 @@
 
     <!-- Font Awesome Link -->
     <script src="https://kit.fontawesome.com/bdc08be0ff.js" crossorigin="anonymous"></script>
+
+    <!-- Google Icons Link -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <!-- SweetAlert CSS Link -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.22.4/dist/sweetalert2.min.css">
 
     <!-- Bootstrap CSS Link -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -29,7 +35,9 @@
 
         <div>
             <abbr title="(S.S.B) Collections Sabse Sasta Bazar">
-                <img class="logo ms-5" src="Logo/Original logo/(S.S.B)-Logo.png" alt="S.S.B Collections Logo">
+                <a href="index.html">
+                    <img class="logo ms-5" src="Logo/Original logo/(S.S.B)-Logo.png" alt="S.S.B Collections Logo">
+                </a>
             </abbr>
         </div>
 
@@ -68,27 +76,49 @@
 
             <div class="card">
                 <div class="img_div">
-                    <img src="Img_s/purse/purse1.webp" alt="">
+                    <!-- <img src="Img_s/purse/purse1.webp" alt=""> -->
                 </div>
+                <div class="product_content">
+
+                    <div class="prdctName_n_Hrt">
+                        <h6 class="prdctName">Arabic Aura watch</h6>
+                        <i class="heart material-icons" id="heart" onclick="like()" title="Like">favorite</i>
+                    </div>
+
+                    <div class="aboutProduct">About Product</div>
+
+                    <div class="starRevwCnt">
+                        <span class="stars">
+                            <i class="star material-icons">star</i>
+                            <i class="star material-icons">star</i>
+                            <i class="star material-icons">star</i>
+                            <i class="star material-icons">star</i>
+                            <i class="starHalf material-icons">star_half</i>
+                        </span>
+                        <span class="prdct_Review_Count">(303 reviews)</span>
+                    </div>
+
+                    <div class="prdctPrice">(Price)</div>
+                </div>
+
             </div>
 
-            <div class="card">
+            <!-- <div class="card">
                 <div class="img_div">
                     <img src="Img_s/headphones_speakers/charger1.webp" alt="">
                 </div>
-            </div>
-
-            <div class="card">
+            </div> -->
+            <!-- <div class="card">
                 <div class="img_div">
                     <img src="Img_s/shoes/shoes1.webp" alt="">
                 </div>
-            </div>
+            </div> -->
 
-            <div class="card">
+            <!-- <div class="card">
                 <div class="img_div">
                     <img src="Img_s/watches/watch1.webp" alt="">
                 </div>
-            </div>
+            </div> -->
 
         </div>
 
@@ -108,14 +138,14 @@
     <div class="newsLetterContainer">
 
 
-        <h2 class="letterHeading">Subscribe to our Newsletter</h2>
+        <h4 class="letterHeading">Subscribe to our Newsletter</h4>
 
         <p class="letterMsg">Get updates on new products and special offers</p>
 
         <div class="letterInpBtn">
 
-            <input type="email" id="letterMail" class="letterInp">
-            <button class="subBtn">Subscribe</button>
+            <input type="email" id="letterMail" class="letterInp" placeholder="Your email address">
+            <button class="subBtn" onclick="inputClr()">Subscribe</button>
 
         </div>
 
@@ -133,55 +163,50 @@
 
     <footer>
 
-        <div class="socialLinks">
+        <div class="div1">
+            <div class="logoMsg">
 
-            <h6>
-                <img class="footerLogo ms-5" src="Logo/Original logo/(S.S.B)-Logo.png" alt="S.S.B Collections Logo">
-                <span>
-                    Sabse Sasta Bazar
-                </span>
-            </h6>
+                <h6>
+                    <img class="footerLogo ms-5" src="Logo/Original logo/(S.S.B)-Logo.png" alt="S.S.B Collections Logo">
+                    <!-- <span>
+                        Sabse Sasta Bazar
+                    </span> -->
+                </h6>
 
-            <ul>
-                <li>
-                    <p>Enjoy the biggest sale of your life</p>
-                </li>
-                <li>(Fb) (Ins) (Twt)</li>
-            </ul>
+                <p>Enjoy the biggest sale of your life</p>
 
+            </div>
+
+            <div class="quickLinks">
+                <h6>Quick Links</h6>
+                <ul class="footerLinks">
+                    <li><a href="">Home</a></li>
+                    <li><a href="">About Us</a></li>
+                    <li><a href="">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="connectUs">
+                <h6>Connect With Us</h6>
+                <ul class="mediaLinks">
+                    <li>
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://wa.me/923143258849" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                    </li>
+                </ul>
+            </div>
         </div>
 
-        <div class="about">
-            <h6>About</h6>
-            <ul>
-                <li>
-                    <a href="">About Us</a>
-                </li>
-                <li>
-                    <a href="">Costumer Support</a>
-                </li>
-                <li>
-                    <a href="">Support Center</a>
-                </li>
-            </ul>
-        </div>
+        <div class="copyRightDiv">
 
-        <div class="service">
-            <h6>Our Services</h6>
-            <ul>
-                <li>Shop</li>
-                <li>Discounts</li>
-                <li>Shipping Modes</li>
-            </ul>
-        </div>
+            <!-- <i class="fa-regular fa-copyright"></i> -->
+            © <span id="date"></span> S.S.B Collections. All rights reserved.
 
-        <div class="company">
-            <h6>Our Company</h6>
-            <ul>
-                <li>About us</li>
-                <li>Register</li>
-                <li>Contact us</li>
-            </ul>
         </div>
 
     </footer>
@@ -206,6 +231,10 @@
 
     <!-- My JavaScript Link -->
     <script src="app.js"></script>
+
+    <!-- SweetAlert JavaScript Link -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.22.4/dist/sweetalert2.all.min.js"></script>
+
 
     <!-- Bootstratp JavaScript Link -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
