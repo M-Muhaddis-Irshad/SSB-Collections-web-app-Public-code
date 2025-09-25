@@ -292,3 +292,157 @@ background: radial-gradient(rgb(0, 89, 255), rgb(0, 0, 158));
 
 //     RenderProducts()
 // }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// let title;
+// let currentProduct;
+
+//     const params = new URLSearchParams(window.location.search);
+
+//     params.forEach((value, key) => {
+//         console.log(`${key}: ${value}`);
+//         h1.innerText = `${key}: ${value}`;
+
+//         title = value
+
+//     })
+
+//     console.log(currentProduct);
+
+// products.forEach((key , index) => {
+//     console.log(`${key}  ${index}`);
+//     let find = index.inc
+// })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// let title;
+// let currentProduct;
+// if (window.location.pathname === `/product.html`) {
+//     const searchParams = new URLSearchParams(window.location.search)
+//     searchParams.forEach((value, key) => {
+//         // console.log(`Key: ${key}, Value: ${value}`);
+//         title = value;
+//     });
+//     currentProduct = products.filter((product) => product.title == title)
+// }
+// console.log(currentProduct[0]);

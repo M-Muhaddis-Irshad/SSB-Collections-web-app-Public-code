@@ -32,7 +32,7 @@ const products = [
 
         image: `logo_Imgs/Img_s/mobile_accessories/earphones3.webp`,
         name: `Wireless NeckBand`,
-        about: `Luxury Waterproof Wrist Watch`,
+        about: `NeckBand Earphones 🎧 with long battery life`,
         reviews: `1,231`,
         price: `1,499`,
         title: `Wireless-Neckband`,
@@ -279,6 +279,8 @@ const products = [
     },
 ]
 
+// Product Cards creating_________________________________________________________
+
 products.forEach((products , index) => {
     
     const {title, image, name, about, reviews, price} = products
@@ -344,18 +346,18 @@ products.forEach((product, index) => {
 
 const emailRagex = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
 
-const subInp = document.getElementById('letterMail');
+const subscribeInput = document.getElementById('letterMail');
 
-function inputClr() {
+function SubscribeEmailChecking() {
 
-    if (!subInp.value.trim()) {
+    if (!subscribeInput.value.trim()) {
         Swal.fire({
             icon: "error",
             title: "Input cannot be empty",
             text: "Enter your email address"
         });
     }
-    else if (!emailRagex.test(subInp.value)) {
+    else if (!emailRagex.test(subscribeInput.value)) {
         Swal.fire({
             icon: "error",
             title: "Email is not correct",
@@ -368,7 +370,7 @@ function inputClr() {
             title: "Subscription confirmed!",
             text: " You’ll now receive our latest news, tips, and updates straight to your email."
         });
-        subInp.value = "";
+        subscribeInput.value = "";
     }
     
 }

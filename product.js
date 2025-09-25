@@ -1,4 +1,4 @@
-const h1 = document.getElementById('h1')
+const Container = document.getElementById('cardContainer')
 
 
 const products = [
@@ -33,7 +33,7 @@ const products = [
 
         image: `logo_Imgs/Img_s/mobile_accessories/earphones3.webp`,
         name: `Wireless NeckBand`,
-        about: `Luxury Waterproof Wrist Watch`,
+        about: `NeckBand Earphones 🎧 with long battery life`,
         reviews: `1,231`,
         price: `1,499`,
         title: `Wireless-Neckband`,
@@ -282,68 +282,76 @@ const products = [
 
 
 
-let title;
-let currentProduct;
+let PrdctTitle;
 
-if (window.location.pathname === '/product.html') {
+const searchParams = new URLSearchParams(window.location.search);
 
-    const params = new URLSearchParams(window.location.search);
+searchParams.forEach((title, key) => {
+    PrdctTitle = title;
+})
 
-    params.forEach((value, key) => {
-        console.log(`${key}: ${value}`);
-        h1.innerText = `${key}: ${value}`;
+const currentProduct = products.filter((products) => products.title === PrdctTitle)[0];
+console.log(currentProduct);
 
-        title = value
+// Product Cards creating_________________________________________________________
 
+const { title, image, name, about, reviews, price } = currentProduct
+
+console.log(`${title} ${image} ${name} ${about} ${reviews} ${price}`);
+
+Container.innerHTML = `
+
+            <div class="card" id="card">
+    
+                <div class="img_div" id="image" style="background-image: url(${image});"></div>
+                
+                <div class="product_content">
+    
+                    <div class="prdctName_n_Hrt">
+                        <h3 class="prdctName">${name}</h3>
+                        <i class="heart material-icons" id="heart" title="Like">favorite</i>
+    
+                    </div>
+    
+                    <h5 class="aboutProduct">${about}</h5>
+    
+                    <div class="starRevwCnt">
+                        <span class="stars">
+                            <h5 class="star material-icons">star</h5>
+                            <h5 class="star material-icons">star</h5>
+                            <h5 class="star material-icons">star</h5>
+                            <h5 class="star material-icons">star</h5>
+                            <h5 class="starHalf material-icons">star_half</h5>
+                        </span>
+                        <h5 class="prdct_Review_Count">(${reviews} Reviews)</h5>
+                    </div>
+    
+                    <h5 class="prdctPrice">Rs${price}</h5>
+                </div>
+    
+            </div>
+
+`
+
+
+
+// Heart Icon fill/empty function___________________________________________________________
+
+document.getElementById('heart').addEventListener('click', () => {
+    heart.classList.toggle('fill');
+})
+
+
+
+// Hover Effects on Cards_____________________________________________________
+{
+    const cardImage = document.getElementById('image');
+
+    cardImage.addEventListener("mouseover", () => {
+        cardImage.style.backgroundImage = 'url(logo_Imgs/Img_s/watches/watch4.webp)'
     })
 
-    console.log(currentProduct);
-
+    cardImage.addEventListener("mouseout", () => {
+        cardImage.style.backgroundImage = `url(${image})`
+    })
 }
-
-
-
-// products.forEach((key , index) => {
-//     console.log(`${key}  ${index}`);
-//     let find = index.inc
-// })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// let title;
-
-// let currentProduct;
-
-// if (window.location.pathname === `/product.html`) {
-//     const searchParams = new URLSearchParams(window.location.search)
-//     searchParams.forEach((value, key) => {
-//         // console.log(`Key: ${key}, Value: ${value}`);
-//         title = value;
-//     });
-//     currentProduct = products.filter((product) => product.title == title)
-// }
-
-// console.log(currentProduct[0]);
