@@ -280,20 +280,23 @@ const products = [
 ]
 
 products.forEach((products , index) => {
+    
+    const {title, image, name, about, reviews, price} = products
+    
     container.innerHTML += `
                 <div class="card" id="card">
 
-                <a class="text-decoration-none text-black" href="./product.html?title=${products.title}">
+                <a class="text-decoration-none text-black" href="./product.html?title=${title}">
 
-                    <div class="img_div"  style="background-image: url(${products.image});">
+                    <div class="img_div"  style="background-image: url(${image});">
                     </div>
                     <div class="product_content">
 
                         <div class="prdctName_n_Hrt">
-                            <h6 class="prdctName">${products.name}</h6>
+                            <h6 class="prdctName">${name}</h6>
                         </div>
 
-                        <div class="aboutProduct">${products.about}</div>
+                        <div class="aboutProduct">${about}</div>
 
                         <div class="starRevwCnt">
                             <span class="stars">
@@ -303,10 +306,10 @@ products.forEach((products , index) => {
                                 <i class="star material-icons">star</i>
                                 <i class="starHalf material-icons">star_half</i>
                             </span>
-                            <span class="prdct_Review_Count">(${products.reviews} Reviews)</span>
+                            <span class="prdct_Review_Count">(${reviews} Reviews)</span>
                         </div>
 
-                        <div class="prdctPrice">Rs${products.price}</div>
+                        <div class="prdctPrice">Rs${price}</div>
                     </div>
 
                 </a>
@@ -376,243 +379,3 @@ function inputClr() {
 const d = new Date();
 
 const year = document.getElementById('year').innerText = d.getFullYear();
-
-
-
-
-
-// Product page JS Star's________________________________________________________________________
-
-
-
-
-
-
-
-// let title;
-// if (window.location.pathname == "/product.html") {
-
-//     const searchParams = new URLSearchParams(window.location.search);
-//     for (const [key, value] of searchParams.entries()) {
-//         if (key === "title") {
-//             title = value;
-//         }
-//         console.log(`${key}, ${value}`);
-//     }
-//     console.log(title)
-    
-//     const currentProduct = products.find((urlTitle) => urlTitle.title === title)
-//     console.log(currentProduct)
-//     let priceDiv = document.getElementById("priceDiv")
-//     priceDiv.innerText = `$ ${currentProduct.price}`
-// }
-
-// const RenderProducts = () => {
-//     let card_container = document.getElementById("card_container")
-//     products.map((data, index) => {
-//         console.log(data)
-//         card_container.innerHTML += `
-//         <div>
-//             <img src=${data.image} height="200" width="200" />
-//             <a href="/home.html?title=${data.title}">${data.title}</a>
-//         </div>
-//         `
-//     })
-// }
-// if (window.location.pathname == "/") {
-
-//     RenderProducts()
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-// const products = [{
-//     title: "mobile-phone",
-//     price: "1200",
-//     image: "./download.jpeg",
-//     categories: "phone"
-// }, 
-// {
-//     title: "mobile-phone2",
-//     price: "2000",
-//     image: "./phone.jpg",
-//     categories: "car"
-// },
-// {
-//     title: "mobile-phone3",
-//     price: "2100",  
-//     image: "./phone.jpg"
-// },
-// {
-//     title: "mobile-phone4",
-//     price: "2300",
-//     image: "./phone.jpg"
-// },
-// {
-//     title: "car",
-//     price: "2500",
-//     image: "./phone.jpg"
-// },
-// ]
-
-// const container = document.getElementById('card_container');
-
-// products.forEach((product, index) => {
-//   console.log(`${index}: ${product.title}, ${product.price}, ${product.image}, ${product.categories || "Others"}`);
-// });
-
-//     products.forEach((product , i) => {
-
-//          container.innerHTML += `
-//               <div class="card">
-
-//                 <a class="text-decoration-none text-black" href="allPages/product/product.html?title=${product.title}">
-
-//                     <div class="img_div">
-//                     </div>
-//                     <div class="product_content">
-
-//                         <div class="prdctName_n_Hrt">
-//                             <h6 class="prdctName">${product.title}</h6>
-//                         </div>
-
-//                         <div class="aboutProduct">About Product</div>
-
-//                         <div class="starRevwCnt">
-//                             <span class="stars">
-//                                 <i class="star material-icons">star</i>
-//                                 <i class="star material-icons">star</i>
-//                                 <i class="star material-icons">star</i>
-//                                 <i class="star material-icons">star</i>
-//                                 <i class="starHalf material-icons">star_half</i>
-//                             </span>
-//                             <span class="prdct_Review_Count">(303 reviews)</span>
-//                         </div>
-
-//                         <div class="prdctPrice">${product.price} </div>
-//                     </div>
-
-//                 </a>
-
-//                 <i class="heart material-icons" id="heart" onclick="like()" title="Like">favorite</i>
-
-//             </div>
-//   `
-
-//         console.log(`${i}, ${product.title}`);
-//     }); 
-
-
-// products.forEach((product, i) => {
-//   container.innerHTML += `
-//     <div class="card">
-
-//       <a class="text-decoration-none text-black" href="allPages/product/product.html?title=${product.title}">
-
-//           <div class="img_div">
-//               <img src="${product.image}" alt="${product.title}">
-//           </div>
-//           <div class="product_content">
-
-//               <div class="prdctName_n_Hrt">
-//                   <h6 class="prdctName">${product.title}</h6>
-//               </div>
-
-//               <div class="aboutProduct">About Product</div>
-
-//               <div class="starRevwCnt">
-//                   <span class="stars">
-//                       <i class="star material-icons">star</i>
-//                       <i class="star material-icons">star</i>
-//                       <i class="star material-icons">star</i>
-//                       <i class="star material-icons">star</i>
-//                       <i class="starHalf material-icons">star_half</i>
-//                   </span>
-//                   <span class="prdct_Review_Count">(303 reviews)</span>
-//               </div>
-
-//               <div class="prdctPrice">${product.price} PKR</div>
-//           </div>
-
-//       </a>
-
-//       <i class="heart material-icons" onclick="like()" title="Like">favorite</i>
-
-//     </div>
-//   `;
-
-//   console.log(`${i}, ${product.title}`);
-// });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// let title;
-// if (window.location.pathname == "/product.html") {
-
-//     const searchParams = new URLSearchParams(window.location.search);
-//     for (const [key, value] of searchParams.entries()) {
-//         if (key === "title") {
-//             title = value;
-//         }
-//         console.log(`${key}, ${value}`);
-//     }
-//     console.log(title)
-    
-//     const currentProduct = products.find((urlTitle) => urlTitle.title === title)
-//     console.log(currentProduct)
-//     let priceDiv = document.getElementById("priceDiv")
-//     priceDiv.innerText = `$ ${currentProduct.price}`
-// }
-
-// const RenderProducts = () => {
-//     let card_container = document.getElementById("card_container")
-//     products.map((data, index) => {
-//         console.log(data)
-//         card_container.innerHTML += `
-//         <div>
-//             <img src=${data.image} height="200" width="200" />
-//             <a href="/home.html?title=${data.title}">${data.title}</a>
-//         </div>
-//         `
-//     })
-// }
-// if (window.location.pathname == "/") {
-
-//     RenderProducts()
-// }

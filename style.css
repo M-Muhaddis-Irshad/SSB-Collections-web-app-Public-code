@@ -140,8 +140,15 @@ abbr a img:hover {
 /* Body css start's */
 
 .body {
-    margin-inline: 48px;
-    width: 100% !important;
+    /* padding-inline: 48px; */
+    /* margin-inline: 18px !important; */
+    width: 95% !important;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center !important;
+    gap: 20px;
 }
 
 .product_heading {
@@ -150,6 +157,7 @@ abbr a img:hover {
 
 .cards_container {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 20px;
 }
@@ -162,6 +170,7 @@ abbr a img:hover {
     width: 200px;
     max-width: 200px !important;
     min-width: 200px !important;
+    padding: 0 !important;
     overflow: hidden;
     border-radius: 8px;
     position: relative;
