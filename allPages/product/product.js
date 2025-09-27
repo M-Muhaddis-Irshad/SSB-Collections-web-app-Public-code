@@ -1,15 +1,18 @@
 const Container = document.getElementById('cardContainer')
 
 
+// Card's Data__________________________________________________________
+
 const products = [
     {
         // Mobile Accessories___________________________________
 
         // Rs.900/- Google 30W Charger And Cable 30W Type C to Type C Fast Charging Supported
 
-        image: `logo_Imgs/Img_s/mobile_accessories/charger1.webp`,
+        image: `../../logo_Imgs/Img_s/mobile_accessories/charger1.webp`,
+        image2: `../../logo_Imgs/Img_s/mobile_accessories/img2nd/googleCharger2-1.webp`,
         name: `Google 30W Charger`,
-        about: `Charger And Cable 30W Type C to C`,
+        description: `Google 30W Charger And Cable 30W Type C to Type C Fast Charging Supported`,
         reviews: `943`,
         price: `999`,
         title: `Google-Charger`,
@@ -20,9 +23,10 @@ const products = [
         //without Checking @ Rs. 600
         //with Checking @ Rs. 650
 
-        image: `logo_Imgs/Img_s/mobile_accessories/earphones2.webp`,
+        image: `../../logo_Imgs/Img_s/mobile_accessories/earphones2.webp`,
+        image2: `../../logo_Imgs/Img_s/mobile_accessories/img2nd/earphone2-2.webp`,
         name: `Air 39 EarBuds RGB Transparent`,
-        about: `RGB Transparent Wireless EarBuds`,
+        description: `RGB Transparent Wireless EarBuds`,
         reviews: `652`,
         price: `799`,
         title: `Air-39`,
@@ -31,9 +35,10 @@ const products = [
     {
         //Rs. 1000/- Bluetooth Wireless NeckBand Earphones 🎧 with long battery life (Stand By Time Approx 4 to 6 Days) Powerfull Base And Sound With microphone (Premium Quality) 
 
-        image: `logo_Imgs/Img_s/mobile_accessories/earphones3.webp`,
+        image: `../../logo_Imgs/Img_s/mobile_accessories/neckBand3.webp`,
+        image2: `../../logo_Imgs/Img_s/mobile_accessories/img2nd/neckBand2-3.webp`,
         name: `Wireless NeckBand`,
-        about: `NeckBand Earphones 🎧 with long battery life`,
+        description: `NeckBand Earphones 🎧 with long battery life`,
         reviews: `1,231`,
         price: `1,499`,
         title: `Wireless-Neckband`,
@@ -42,9 +47,10 @@ const products = [
     {
         //Rs.3200/- each - Bluk’s Bx-301 Powerbank 20,000Mah With Led Display & Fast Charging with one year Official Company Warranty (Box Pack)
 
-        image: `logo_Imgs/Img_s/mobile_accessories/powerbank4.webp`,
+        image: `../../logo_Imgs/Img_s/mobile_accessories/powerbank4.webp`,
+        image2: `../../logo_Imgs/Img_s/mobile_accessories/img2nd/powerBank2-4.webp`,
         name: `Bluk’s Bx-301 Powerbank`,
-        about: `20,000Mah With Led Display & Fast Charging`,
+        description: `20,000Mah With Led Display & Fast Charging`,
         reviews: `7,465`,
         price: `3,999`,
         title: `Power-Bank`,
@@ -53,9 +59,10 @@ const products = [
     {
         //Rs. 1250/- Sanag Portable Speaker High Quality Bass Sound With Cable (Box Pack) (Random Designs)
 
-        image: `logo_Imgs/Img_s/mobile_accessories/speaker5.webp`,
+        image: `../../logo_Imgs/Img_s/mobile_accessories/speaker5.webp`,
+        image2: `../../logo_Imgs/Img_s/mobile_accessories/img2nd/speaker2-5.webp`,
         name: `Sanag Portable Speaker`,
-        about: `High Quality Bass Sound With Cable`,
+        description: `High Quality Bass Sound With Cable`,
         reviews: `8,973`,
         price: `1,499`,
         title: `Sanag-Speaker`,
@@ -70,9 +77,10 @@ const products = [
         // Smooth faux leather or coated canvas
         //Price Just 1200 Rs
 
-        image: `logo_Imgs/Img_s/purse/purse1.webp`,
+        image: `../../logo_Imgs/Img_s/purse/purse1.webp`,
+        image2: `../../logo_Imgs/Img_s/purse/img2nd/purse2-1.webp`,
         name: `Hijab Shoulder Bag`,
-        about: `High Quality Bag With Digital Starp For Girls 💝`,
+        description: `High Quality Bag With Digital Starp For Girls 💝`,
         reviews: `4,350`,
         price: `1,999`,
         title: `Hijab-bag`,
@@ -84,9 +92,10 @@ const products = [
         //Price just Rs 2000/- fixed price
 
 
-        image: `logo_Imgs/Img_s/purse/purse2.webp`,
+        image: `../../logo_Imgs/Img_s/purse/purse2.webp`,
+        image2: `../../logo_Imgs/Img_s/purse/img2nd/purse2-2.webp`,
         name: `Louis Vuitton Bag`,
-        about: `AAA Quality Louis Vuitton Tote Bag`,
+        description: `AAA Quality Louis Vuitton Tote Bag`,
         reviews: `4,384`,
         price: `3,199`,
         title: `LV-Tote-Bag`,
@@ -97,9 +106,10 @@ const products = [
         //Stylish, compact & classy!  
         //Rs. 1450
 
-        image: `logo_Imgs/Img_s/purse/purse3.webp`,
+        image: `../../logo_Imgs/Img_s/purse/purse3.webp`,
+        image2: `../../logo_Imgs/Img_s/purse/img2nd/purse2-3.webp`,
         name: `Coach Medium Handbag`,
-        about: `Stylish, compact & classy! Variety Shop`,
+        description: `Stylish, compact & classy! Variety Shop`,
         reviews: `7,126`,
         price: `2,099`,
         title: `Coach-Handbag`,
@@ -110,9 +120,10 @@ const products = [
         //Elegant design meets modern modesty!
         //Price: Rs. 1500/
 
-        image: `logo_Imgs/Img_s/purse/purse4.webp`,
+        image: `../../logo_Imgs/Img_s/purse/purse4.webp`,
+        image2: `../../logo_Imgs/Img_s/purse/img2nd/purse2-4.webp`,
         name: `Hijab Printed Handbag`,
-        about: `Elegant design meets modern modesty!`,
+        description: `Elegant design meets modern modesty!`,
         reviews: `3,481`,
         price: `1,949`,
         title: `Hijab-Handbag`,
@@ -124,9 +135,10 @@ const products = [
         //Inside Pocket
         //Rs.1350/=
 
-        image: `logo_Imgs/Img_s/purse/purse5.webp`,
+        image: `../../logo_Imgs/Img_s/purse/purse5.webp`,
+        image2: `../../logo_Imgs/Img_s/purse/img2nd/purse2-5.webp`,
         name: `Tote Bag Big Size High Quality`,
-        about: `High Quality Cynthetic Material`,
+        description: `High Quality Cynthetic Material`,
         reviews: `3,048`,
         price: `1,949`,
         title: `Big-Tote-Bag`,
@@ -141,9 +153,10 @@ const products = [
         //Ultra light Soft n comfortable 
         //Rs.7,499.00 PKR
 
-        image: `logo_Imgs/Img_s/shoes/shoes1.webp`,
+        image: `../../logo_Imgs/Img_s/shoes/shoes1.webp`,
+        image2: `../../logo_Imgs/Img_s/shoes/img2nd/shoes2-1.webp`,
         name: `Skechers Arch Fit Branded`,
-        about: `Ultra light Soft n comfortable!`,
+        description: `Ultra light Soft n comfortable!`,
         reviews: `1,323`,
         price: `8,499`,
         title: `Arch-Fit`,
@@ -154,9 +167,10 @@ const products = [
         // Ultra light n comfortable
         //Rs.3500
 
-        image: `logo_Imgs/Img_s/shoes/shoes2.webp`,
+        image: `../../logo_Imgs/Img_s/shoes/shoes2.webp`,
+        image2: `../../logo_Imgs/Img_s/shoes/img2nd/shoes2-2.webp`,
         name: `Air force 1 from Nike`,
-        about: `Branded Ultra light n comfortable`,
+        description: `Branded Ultra light n comfortable`,
         reviews: `2,318`,
         price: `4,499`,
         title: `Nike-Air`,
@@ -169,9 +183,10 @@ const products = [
         // Soft Comfortable 
         // Price Rs 4500/-
 
-        image: `logo_Imgs/Img_s/shoes/shoes3.webp`,
+        image: `../../logo_Imgs/Img_s/shoes/shoes3.webp`,
+        image2: `../../logo_Imgs/Img_s/shoes/img2nd/shoes2-3.webp`,
         name: `ULTRA GO SKECHERS`,
-        about: `Imported China 🇨🇳 Soft Comfortable`,
+        description: `Imported China 🇨🇳 Soft Comfortable`,
         reviews: `2,185`,
         price: `5,499`,
         title: `Go-Skechers`,
@@ -182,9 +197,10 @@ const products = [
         // Sole is best for outdoors lovers
         // Rs 8,099
 
-        image: `logo_Imgs/Img_s/shoes/shoes4.webp`,
+        image: `../../logo_Imgs/Img_s/shoes/shoes4.webp`,
+        image2: `../../logo_Imgs/Img_s/shoes/img2nd/shoes2-4.webp`,
         name: `Skechers D'LUX Flex Groove`,
-        about: `Sole is best for outdoors lovers`,
+        description: `Sole is best for outdoors lovers`,
         reviews: `2,381`,
         price: `9,099`,
         title: `D'LUX-Groove`,
@@ -195,9 +211,10 @@ const products = [
         // Medicated Soft Comfortable 
         // Price 2000/- Fixed
 
-        image: `logo_Imgs/Img_s/shoes/slipper5.webp`,
+        image: `../../logo_Imgs/Img_s/shoes/slipper5.webp`,
+        image2: `../../logo_Imgs/Img_s/shoes/img2nd/slipper2-5.webp`,
         name: `Skechers Mens Slides`,
-        about: `Medicated Soft Comfortable`,
+        description: `Medicated Soft Comfortable`,
         reviews: `8,745`,
         price: `3,499`,
         title: `Mens-Slide`,
@@ -207,22 +224,26 @@ const products = [
     // Watches___________________________________
 
     {
-        // Incomplete
 
-        image: `logo_Imgs/Img_s/watches/watch1.webp`,
-        name: `Arabic Aura watch`,
-        about: `Luxury Waterproof Wrist Watch`,
-        reviews: `303`,
-        price: `2,199`,
+        image: `../../logo_Imgs/Img_s/watches/watch1.webp`,
+        image2: `../../logo_Imgs/Img_s/watches/img2nd/watch2-1.webp`,
+        name: `Lige Foxbox Mens Watch`,
+        description: `LIGE FOXBOX 0011 Watches For Men Luxury Brand Sport Quartz Wristwatch Waterproof Digital Clock Men Watch Relogio Masculino`,
+        reviews: `498`,
+        price: `6,500`,
         title: `Arabic-Aura`,
         category: `watch`
     },
     {
         // Rs.1500/- each - Rolex Yacht-Master Date Just With Date Heavy Master Lock Steel Buzzle Working With MODERN WATCHES NAME BOX 📦 (Premium Quality)
 
-        image: `logo_Imgs/Img_s/watches/watch2.webp`,
+        image: `../../logo_Imgs/Img_s/watches/watch2.webp`,
+        image2: `../../logo_Imgs/Img_s/watches/img2nd/watch2-2-2.webp`,
         name: `Rolex Yacht-Master`,
-        about: `With Date Heavy Master Lock Steel Buzzle`,
+        description: `Rolex Oyster Perpetual Date Yacht-Master 226658 Mens Watch. 42mm 18K yellow gold case. Bidirectional 18K yellow gold bezel with black ceramic insert. Black dial with yellow gold Mercedes hands and index hours markers. Magnified date display at a 3 o'clock position. Minute marker on the outer dial. Black rubber Oysterflex bracelet with folder over clasp with safety. Will fit up to a 7-inch wrist. Sapphire crystal. 18K yellow gold case back. Automatic self-winding movement. This watch comes with original Box and Papers.
+        <br>
+        <br>
+        This watch is backed by our two-year warranty.`,
         reviews: `3,285`,
         price: `2,199`,
         title: `Rolex-Yacht`,
@@ -241,9 +262,10 @@ const products = [
 
 
 
-        image: `logo_Imgs/Img_s/watches/watch3.webp`,
+        image: `../../logo_Imgs/Img_s/watches/watch3.webp`,
+        image2: ``,
         name: `BESTWIN DUAL TIME WATCH`,
-        about: `TRENDY STYLE WATER RESISTANCE`,
+        description: `TRENDY STYLE WATER RESISTANCE`,
         reviews: `1,247`,
         price: `3,699`,
         title: `Bestwin-Watch`,
@@ -255,9 +277,10 @@ const products = [
         // Pack of 3: Rs.1000 With Box 🔥 
         // (For Her)
 
-        image: `logo_Imgs/Img_s/watches/watch4.webp`,
+        image: `../../logo_Imgs/Img_s/watches/watch4.webp`,
+        image2: ``,
         name: `Digital LED Watche`,
-        about: `Luxury design best for female`,
+        description: `Luxury design best for female`,
         reviews: `981`,
         price: `799`,
         title: `Digital-Watch`,
@@ -270,9 +293,10 @@ const products = [
         //Fiber watch
         //Price 1,499/- Only
 
-        image: `logo_Imgs/Img_s/watches/watch5.webp`,
+        image: `../../logo_Imgs/Img_s/watches/watch5.webp`,
+        image2: ``,
         name: `Arabic Marble Aura`,
-        about: `Luxury Waterproof Wrist Watch`,
+        description: `Luxury Waterproof Wrist Watch`,
         reviews: `1,647`,
         price: `2,199`,
         title: `Arabic-Aura`,
@@ -280,7 +304,7 @@ const products = [
     },
 ]
 
-
+// Check Search Parameters for find the card from title__________________________________________
 
 let PrdctTitle;
 
@@ -288,16 +312,16 @@ const searchParams = new URLSearchParams(window.location.search);
 
 searchParams.forEach((title, key) => {
     PrdctTitle = title;
-})
+});
 
 const currentProduct = products.filter((products) => products.title === PrdctTitle)[0];
-console.log(currentProduct);
 
-// Product Cards creating_________________________________________________________
 
-const { title, image, name, about, reviews, price } = currentProduct
+// Product Card creating_________________________________________________________
 
-console.log(`${title} ${image} ${name} ${about} ${reviews} ${price}`);
+const { title, image, image2, name, description, reviews, price } = currentProduct
+
+console.log(`${title} ${image} ${image2} ${name} ${description} ${reviews} ${price}`);
 
 Container.innerHTML = `
 
@@ -308,25 +332,28 @@ Container.innerHTML = `
                 <div class="product_content">
     
                     <div class="prdctName_n_Hrt">
-                        <h3 class="prdctName">${name}</h3>
+                        <h2 class="prdctName">${name}</h2>
                         <i class="heart material-icons" id="heart" title="Like">favorite</i>
     
                     </div>
     
-                    <h5 class="aboutProduct">${about}</h5>
+                    
+                    <h5 class="descriptionHeading">Description</h5>
+
+                    <h6 class="descriptionProduct">${description}</h6>
     
                     <div class="starRevwCnt">
                         <span class="stars">
-                            <h5 class="star material-icons">star</h5>
-                            <h5 class="star material-icons">star</h5>
-                            <h5 class="star material-icons">star</h5>
-                            <h5 class="star material-icons">star</h5>
-                            <h5 class="starHalf material-icons">star_half</h5>
+                            <h4 class="star material-icons">star</h4>
+                            <h4 class="star material-icons">star</h4>
+                            <h4 class="star material-icons">star</h4>
+                            <h4 class="star material-icons">star</h4>
+                            <h4 class="starHalf material-icons">star_half</h4>
                         </span>
-                        <h5 class="prdct_Review_Count">(${reviews} Reviews)</h5>
+                        <h4 class="prdct_Review_Count">(${reviews} Reviews)</h4>
                     </div>
     
-                    <h5 class="prdctPrice">Rs${price}</h5>
+                    <h4 class="prdctPrice">Rs${price}</h4>
                 </div>
     
             </div>
@@ -337,21 +364,26 @@ Container.innerHTML = `
 
 // Heart Icon fill/empty function___________________________________________________________
 
-document.getElementById('heart').addEventListener('click', () => {
+const heart = document.getElementById('heart');
+heart.addEventListener('click', () => {
     heart.classList.toggle('fill');
-})
+    heart.title = heart.classList.contains('fill') ? 'UnLike' : 'Like';
+});
 
 
 
 // Hover Effects on Cards_____________________________________________________
-{
-    const cardImage = document.getElementById('image');
+const Card = document.getElementById('card');
+const cardImage = document.getElementById('image');
 
-    cardImage.addEventListener("mouseover", () => {
-        cardImage.style.backgroundImage = 'url(logo_Imgs/Img_s/watches/watch4.webp)'
-    })
+cardImage.onmouseover = () => cardImage.style.backgroundImage = 'url(logo_Imgs/Img_s/watches/watch4.webp)'
 
-    cardImage.addEventListener("mouseout", () => {
-        cardImage.style.backgroundImage = `url(${image})`
-    })
-}
+Card.addEventListener("mouseover", () => {
+    cardImage.style.backgroundImage = `url(${image2})`
+    cardImage.classList.add('transformImg');
+})
+
+Card.addEventListener("mouseout", () => {
+    cardImage.style.backgroundImage = `url(${image})`
+    cardImage.classList.remove('transformImg');
+})

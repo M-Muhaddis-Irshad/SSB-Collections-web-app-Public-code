@@ -446,3 +446,103 @@ background: radial-gradient(rgb(0, 89, 255), rgb(0, 0, 158));
 //     currentProduct = products.filter((product) => product.title == title)
 // }
 // console.log(currentProduct[0]);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Heart Icon fill_________________________________________________________________
+
+// products.forEach((product, index) => {
+//     const heart = document.getElementById(`heart-${index}`)
+
+//     heart.addEventListener('click', (event) => {
+//         heart.classList.toggle('fill');
+//         heart.title = heart.classList.contains('fill') ? 'UnLike' : 'Like';
+//     });
+// });
+
+
+// // Cards hover effect_____________________________________________________________________---
+// products.forEach((products, itrator) => {
+//     const { image, image2 } = products;
+//     const card = document.getElementById(`card-${itrator}`);
+//     const img = document.getElementById(`image-${itrator}`);
+//     card.onmouseover = () => img.style.backgroundImage = `url(${image2})`; 
+//     card.onmouseout = () => img.style.backgroundImage = `url(${image})`; 
+// });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// products.forEach((products, index) => {
+
+//     const {image, image2} = products;
+
+//     // Hover Effects on Cards_____________________________________________________
+//     const cardImage = document.getElementById(`image-${index}`);
+
+//     // cardImage.onmouseover = () => cardImage.style.backgroundImage = 'url(logo_Imgs/Img_s/watches/watch4.webp)'
+
+//     cardImage.addEventListener("mouseover", () => {
+//         cardImage.style.backgroundImage = `url(${image2})`
+//     })
+
+//     cardImage.addEventListener("mouseout", () => {
+//         cardImage.style.backgroundImage = `url(${image})`
+//     })
+
+// });
+
+
+
+
+

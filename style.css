@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: whitesmoke !important;
+    background-color: #b8b8b8 !important;
 }
 
 /* Head Nabar css start's */
@@ -186,14 +186,15 @@ abbr a img:hover {
 .img_div {
     width: 200px;
     height: 210px;
-    /* background-image: url(logo_Imgs/Img_s/watches/watch5.webp); */
+    /* background-image: url(logo_Imgs/Img_s/watches/img2nd/watch2-3.jpg); */
     background-size: 220px 220px;
     background-repeat: no-repeat;
     border: none;
+    transition: all 0.2s;
 }
 
-.img_div img {
-    width: 200px;
+.img_div.transformImg {
+    transform: translateY(-2px);
 }
 
 /* Product Description start's______________________________________________ */
@@ -324,7 +325,7 @@ abbr a img:hover {
     border: none;
     border-radius: 0px 8px 8px 0px;
     cursor: pointer;
-    transition: 0.2s;
+    transition: 0.3s;
 }
 
 .subBtn:hover {
