@@ -160,6 +160,8 @@ abbr a img:hover {
 .body {
     display: flex;
     justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .product_heading {
@@ -177,34 +179,34 @@ abbr a img:hover {
 
 /* Product Card CSS start's______________________________________________ */
 
-.card {
+.cards {
     color: white !important;
-    background-color: rgb(0, 113, 189) !important;
     max-width: 1000px !important;
-    height: 440px !important;
-    padding: 0 10px 0 0 !important;
-    border: 2px solid black;
-    border-radius: 8px;
+    /* height: 440px !important; */
+    /* border-radius: 8px; */
     display: flex;
-    flex-direction: row !important;
+    flex-wrap: wrap;
+    text-align: left;
     overflow: hidden;
     transition: all 0.3s;
 }
 
-.card:hover {
+/* .cards:hover {
     background-color: rgb(0, 111, 221) !important;
-    /* transform: translateY(-5px); */
-    /* filter: drop-shadow(0px 8px 4px rgba(0, 0, 0, 0.450)); */
-}
+    transform: translateY(-5px);
+    filter: drop-shadow(0px 8px 4px rgba(0, 0, 0, 0.450));
+} */
 
 
 .img_div {
-    width: 475px;
-    height: 550px;
-    background-image: url(logo_Imgs/Img_s/watches/img2nd/watch2-1.webp);
-    background-image: url(../../logo_Imgs/Img_s/watches/img2nd/watch2-1.png);
+    /* width: 475px !important; */
+    width: 450px !important;
+    height: 440px !important;
+    /* background-image: url(logo_Imgs/Img_s/watches/img2nd/watch2-1.webp);
+    background-image: url(../../logo_Imgs/Img_s/watches/img2nd/watch2-4.webp); */
     background-size: 450px 440px;
     background-repeat: no-repeat;
+    border-radius: 8px 0 0 8px;
     border: none;
     transition: all 0.2s;
 }
@@ -216,11 +218,20 @@ abbr a img:hover {
 /* Product Description start's______________________________________________ */
 
 .product_content {
-    max-width: 470px;
+    width: 506px !important;
+    max-width: 506px !important;
+    height: 440px;
     padding: 15px;
+    background-color: rgb(0, 113, 189) !important;
+    border-radius: 0 8px 8px 0;
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    transition: all 0.2s;
+}
+
+.product_content.transform {
+    /* transform: translateY(-2px); */
+    height: 438px;
 }
 
 .prdctName_n_Hrt {
@@ -245,15 +256,25 @@ abbr a img:hover {
     color: red;
 }
 
-.descriptionHeading{
+.descriptionHeading h5{
     color: white;
 }
 
 .descriptionProduct {
-    font-size: 14px !important;
+    font-size: 12px !important;
+    font-weight: 600;
     color: rgba(255, 255, 255, 0.6);
-    /* width: 140px; */
+    line-height: 18px;
+    width: 450px !important;
     margin-bottom: 5px;
+}
+
+
+.descriptionH6 {
+    color: rgba(255, 255, 255, 0.8) !important;
+    font-size: 12 !important;
+    line-height: 18px !important;
+    margin-bottom: 0.5px !important;
 }
 
 .starRevwCnt {
@@ -265,10 +286,6 @@ abbr a img:hover {
     color: gold;
     margin-bottom: -4px;
 }
-
-/* .prdct_Review_Count {
-    font-size: 12px;
-} */
 
 /* Product Description end's______________________________________________ */
 

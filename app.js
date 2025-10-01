@@ -229,7 +229,7 @@ const products = [
         about: `LIGE FOXBOX 0011 For Men`,
         reviews: `498`,
         price: `6,500`,
-        title: `Arabic-Aura`,
+        title: `LIGE-FOXBOX`,
         category: `watch`
     },
     {
@@ -273,7 +273,7 @@ const products = [
         // (For Her)
 
         image: `logo_Imgs/Img_s/watches/watch4.webp`,
-        image2: ``,
+        image2: `logo_Imgs/Img_s/watches/img2nd/watch2-4.webp`,
         name: `Digital LED Watche`,
         about: `Luxury design best for female`,
         reviews: `981`,
@@ -289,7 +289,7 @@ const products = [
         //Price 1,499/- Only
 
         image: `logo_Imgs/Img_s/watches/watch5.webp`,
-        image2: ``,
+        image2: `logo_Imgs/Img_s/watches/img2nd/watch2-5.webp`,
         name: `Arabic Marble Aura`,
         about: `Luxury Waterproof Wrist Watch`,
         reviews: `1,647`,
@@ -382,7 +382,7 @@ function SubscribeEmailChecking() {
     if (!subscribeInput.value.trim()) {
         Swal.fire({
             icon: "error",
-            title: "Input cannot be empty",
+            title: "Input can't be empty",
             text: "Enter your email address"
         });
     }

@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="product.css">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="../../logo_Imgs/Logo/Original logo/(S.S.B)-Logo-circle-crop.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../../logo_Imgs/Logo/Original logo/(S.S.B)-Logo-circle-crop.png"
+        type="image/x-icon">
 
     <!-- Font Awesome Link -->
     <script src="https://kit.fontawesome.com/bdc08be0ff.js" crossorigin="anonymous"></script>
@@ -68,33 +69,47 @@
         <div class="cardContainer" id="cardContainer">
 
             <!-- <div class="card" id="card">
-    
-                <div class="img_div" id="image"></div>
-                
+
+                <div class="img_div" id="image" style="background-image: url(${image});"></div>
+
                 <div class="product_content">
-    
+
                     <div class="prdctName_n_Hrt">
-                        <h3 class="prdctName">${name}</h3>
+                        <h2 class="prdctName">${name}</h2>
                         <i class="heart material-icons" id="heart" title="Like">favorite</i>
-    
+
                     </div>
-    
-                    <h5 class="aboutProduct">${about}</h5>
-    
+
+
+                    <ul>
+                        <li class="descriptionHeading">
+
+                            <h5>Description</h5>
+                            <ol class="descriptionProduct">
+                                    <li>${Description1}</li>
+                                    <li>${Description2}</li>
+                                    <li>${Description3}</li>
+                                    <li>${Description4}</li>
+                            </ol>
+
+                        </li>
+
+                    </ul>
+
                     <div class="starRevwCnt">
                         <span class="stars">
-                            <h5 class="star material-icons">star</h5>
-                            <h5 class="star material-icons">star</h5>
-                            <h5 class="star material-icons">star</h5>
-                            <h5 class="star material-icons">star</h5>
-                            <h5 class="starHalf material-icons">star_half</h5>
+                            <h4 class="star material-icons">star</h4>
+                            <h4 class="star material-icons">star</h4>
+                            <h4 class="star material-icons">star</h4>
+                            <h4 class="star material-icons">star</h4>
+                            <h4 class="starHalf material-icons">star_half</h4>
                         </span>
-                        <h5 class="prdct_Review_Count">(${reviews} Reviews)</h5>
+                        <h4 class="prdct_Review_Count">(${reviews} Reviews)</h4>
                     </div>
-    
-                    <h5 class="prdctPrice">Rs${price}</h5>
+
+                    <h4 class="prdctPrice">Rs${price}</h4>
                 </div>
-    
+
             </div> -->
 
         </div>
