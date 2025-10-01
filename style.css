@@ -7,17 +7,21 @@ body {
 /* Head Nabar css start's */
 
 .navbar_css {
+    width: 100%;
+    margin: auto;
+    padding: 8px 48px;
     display: flex;
     flex-direction: row;
     justify-content: start;
     justify-content: space-between;
     align-items: center;
-
-    margin: auto;
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.9);
+    /* background-color: rgba(255, 255, 255, 0.9); */
     position: relative;
     backdrop-filter: blur(10px);
+}
+
+.logoDiv {
+    margin: 0;
 }
 
 .logo {
@@ -42,12 +46,12 @@ abbr a img:hover {
 .navLinks {
     display: flex;
     justify-content: center;
-    gap: 20px;
-    margin-right: 48px;
+    gap: 50px !important;
 }
 
 .navLinks span a {
-    font-size: 16px;
+    font-size: 20px !important;
+    font-weight: 500;
     text-decoration: none;
     color: rgb(100, 100, 100);
     transition: all 0.2s;
@@ -62,7 +66,7 @@ abbr a img:hover {
     content: "";
     position: absolute;
     left: 0;
-    bottom: 0;
+    bottom: -2px;
     width: 100%;
     height: 0.070vw;
     background-color: dodgerblue;
@@ -75,6 +79,34 @@ abbr a img:hover {
     transform: scaleX(1);
     transform-origin: left;
 }
+
+
+/* Navbar Toggler (HamBurger) */
+
+
+.navbarToggler {
+    display: none;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+/* .navbarToggler:hover {} */
+
+.bar {
+    display: block;
+    width: 35px;
+    height: 4px;
+    margin: 5px auto;
+    background-color: lightslategrey;
+    border-radius: 5px;
+    transition: all 0.2s ease-in-out;
+}
+
+
+/* Navbar Toggler (HamBurger) */
+
+
 
 
 /* Head Nabar css end's */
@@ -140,8 +172,6 @@ abbr a img:hover {
 /* Body css start's */
 
 .body {
-    /* padding-inline: 48px; */
-    /* margin-inline: 18px !important; */
     width: 95% !important;
     margin: auto;
     display: flex;
@@ -174,7 +204,7 @@ abbr a img:hover {
     overflow: hidden;
     border-radius: 8px;
     position: relative;
-    transition: all 0.3s ;
+    transition: all 0.3s;
 }
 
 .card:hover {
@@ -440,17 +470,6 @@ ul {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 /* Scroll Bar Styling______________________________ */
 
 /* width */
@@ -473,4 +492,78 @@ ul {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: deepskyblue
+}
+
+
+
+
+
+/* Media Queries start's______________________________________________________________ */
+
+@media screen and (max-width: 790px) {
+
+    .navbar_css {
+        width: 100%;
+        margin: auto;
+        padding: 8px 28px;
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        backdrop-filter: blur(10px);
+        transition: all 0.2s;
+    }
+
+    .navbar_css.active {
+        backdrop-filter: none;
+        background-color: rgb(0, 0, 0, 0.5);
+    }
+
+    .navLinks {
+        width: 200px;
+        height: 100vh;
+        padding: 70px 24px;
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 10px;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 10px 10px rgb(0, 0, 0, 0.5);
+        position: absolute;
+        top: 0;
+        right: 0;
+        transition: all 0.2s;
+    }
+
+    .navLinks.active {
+        display: flex;
+    }
+
+    .navbarToggler {
+        display: block;
+        z-index: 999;
+    }
+
+    .navbarToggler.active .bar2 {
+        opacity: 0;
+    }
+
+    .navbarToggler.active .bar1 {
+        transform: translateY(9px) rotate(45deg);
+    }
+
+    .navbarToggler.active .bar3 {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+
+
+}
+
+@media screen and (max-width: 350px) {
+    .navLinks {
+        width: 150px;
+    }
 }

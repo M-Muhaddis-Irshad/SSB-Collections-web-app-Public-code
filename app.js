@@ -1,3 +1,13 @@
+const navContainer = document.getElementById('navContainer');
+const toggleBar = document.getElementById('toggleBar');
+const navLinks = document.getElementById('navLinks');
+
+toggleBar.addEventListener('click', () => {
+    navContainer.classList.toggle('active');
+    toggleBar.classList.toggle('active');
+    navLinks.classList.toggle('active');
+})
+
 const container = document.getElementById('card_container');
 
 const products = [
