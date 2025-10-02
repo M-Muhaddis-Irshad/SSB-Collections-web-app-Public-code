@@ -1,3 +1,5 @@
+// NavBar toggling__________________________________________
+
 const navContainer = document.getElementById('navContainer');
 const toggleBar = document.getElementById('toggleBar');
 const navLinks = document.getElementById('navLinks');
@@ -7,6 +9,8 @@ toggleBar.addEventListener('click', () => {
     toggleBar.classList.toggle('active');
     navLinks.classList.toggle('active');
 })
+
+// Array of objects with product details____________________________________________
 
 const container = document.getElementById('card_container');
 
@@ -341,7 +345,7 @@ products.forEach((products, index) => {
                             <span class="prdct_Review_Count">(${reviews} Reviews)</span>
                         </div>
 
-                        <div class="prdctPrice">Rs${price}</div>
+                        <div class="prdctPrice">Rs ${price}</div>
                     </div>
 
                 </a>
@@ -381,7 +385,7 @@ products.forEach((products, index) => {
 });
 
 
-// NewsLetter Start's_____________________________________________________________
+// NewsLetter_____________________________________________________________
 
 const emailRagex = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
 

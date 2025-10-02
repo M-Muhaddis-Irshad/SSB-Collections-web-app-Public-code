@@ -6,7 +6,7 @@ body {
 
 /* Head Nabar css start's */
 
-.navbar_css {
+.navbarLclCss {
     width: 100%;
     margin: auto;
     padding: 8px 48px;
@@ -16,8 +16,10 @@ body {
     justify-content: space-between;
     align-items: center;
     /* background-color: rgba(255, 255, 255, 0.9); */
-    position: relative;
     backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 999;
 }
 
 .logoDiv {
@@ -129,7 +131,6 @@ abbr a img:hover {
     margin-bottom: 20px;
     padding-block: 60px;
     background-color: dodgerblue;
-    /* background: linear-gradient(to left , rgb(192, 0, 0),purple, rgb(0, 0, 204)); */
 }
 
 .welcome {
@@ -290,6 +291,10 @@ abbr a img:hover {
     font-size: 12px;
 }
 
+.prdctPrice {
+    font-weight: 500;
+}
+
 /* Product Description end's______________________________________________ */
 
 
@@ -320,7 +325,6 @@ abbr a img:hover {
     gap: 10px;
     margin-top: 50px;
     background-color: #e2e4e9;
-    /* background-color: red; */
 }
 
 .letterHeading {
@@ -379,13 +383,11 @@ abbr a img:hover {
 footer {
     color: white;
     width: 100%;
-    /* height: 200px; */
     padding: 40px 64px 64px 64px;
     padding-bottom: 28px;
     background-color: dodgerblue;
     display: flex;
     flex-direction: column;
-    /* align-items: center !important; */
     justify-content: center;
     text-align: center;
     gap: 5px;
@@ -396,8 +398,8 @@ footer .div1 {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
+    flex-wrap: wrap;
     text-align: left;
-    /* gap: 240px; */
 }
 
 .logoMsg .footerLogo {
@@ -498,11 +500,13 @@ ul {
 
 
 
+
+
 /* Media Queries start's______________________________________________________________ */
 
-@media screen and (max-width: 790px) {
+@media screen and (max-width: 750px) {
 
-    .navbar_css {
+    .navbarLclCss {
         width: 100%;
         margin: auto;
         padding: 8px 28px;
@@ -516,22 +520,22 @@ ul {
         transition: all 0.2s;
     }
 
-    .navbar_css.active {
+    .navbarLclCss.active {
         backdrop-filter: none;
-        background-color: rgb(0, 0, 0, 0.5);
+        background-color: rgba(0, 162, 255, 0.7);
     }
 
     .navLinks {
         width: 200px;
-        height: 100vh;
+        height: 100vh !important;
         padding: 70px 24px;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 10px 10px rgb(0, 0, 0, 0.5);
         display: none;
         flex-direction: column;
         align-items: flex-start;
         justify-content: flex-start;
         gap: 10px;
-        backdrop-filter: blur(10px);
-        box-shadow: 0 10px 10px rgb(0, 0, 0, 0.5);
         position: absolute;
         top: 0;
         right: 0;
@@ -540,6 +544,27 @@ ul {
 
     .navLinks.active {
         display: flex;
+    }
+
+
+
+    .navLinks span a {
+        color: rgb(0, 225, 255);
+        padding: 5px;
+    }
+
+    .navLinks span a:hover {
+        color: white;
+        background-color: rgb(72, 164, 255);
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgb(0, 0, 0, 0.5);
+    }
+
+
+
+
+    .navLinks span a::after {
+        background-color: transparent;
     }
 
     .navbarToggler {
@@ -558,6 +583,273 @@ ul {
     .navbarToggler.active .bar3 {
         transform: translateY(-9px) rotate(-45deg);
     }
+
+
+}
+
+@media screen and (max-width: 678px) {
+
+    .cards_container {
+        gap: 10px;
+    }
+
+    .card {
+        width: 280px !important;
+        max-width: 1000px !important;
+    }
+
+    .img_div {
+        width: 100%;
+        height: 290px;
+        background-size: 100% 100%;
+    }
+
+    .product_content {
+        display: flex;
+        gap: 2px;
+    }
+
+    .prdctName {
+        font-size: x-large;
+        width: 190px !important;
+    }
+
+    .heart {
+        font-size: 28px !important;
+        bottom: 155px;
+    }
+
+    .aboutProduct {
+        font-size: 14px !important;
+        color: rgba(0, 0, 0, 0.7);
+        width: 160px;
+        margin-bottom: 3px;
+    }
+
+    .stars {
+        color: gold;
+        -webkit-text-stroke: 2px gold !important;
+        margin-bottom: -2px !important;
+    }
+
+    .stars i {
+        font-size: 18px !important;
+    }
+
+    .starHalf {
+        font-size: 18px !important;
+    }
+
+    .prdct_Review_Count {
+        font-size: 14px !important;
+    }
+
+    .prdctPrice {
+        font-size: large;
+        font-weight: 500;
+    }
+
+}
+
+
+@media screen and (max-width: 600px) {
+
+    .cards_container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+
+
+    /* Product Card CSS start's______________________________________________ */
+
+    .card {
+        width: 280px !important;
+        max-width: 1000px !important;
+        /* margin: 5px 10px; */
+        /* overflow: hidden; */
+        /* border-radius: 8px; */
+        /* position: relative; */
+        /* transition: all 0.3s; */
+    }
+
+    /* 
+    .card:hover {
+        transform: translateY(-5px);
+        filter: drop-shadow(0px 8px 4px rgba(0, 0, 0, 0.450));
+    } */
+
+
+    .img_div {
+        width: 100%;
+        height: 270px;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        border: none;
+        transition: all 0.2s;
+    }
+
+    .img_div.transformImg {
+        transform: translateY(-2px);
+    }
+
+    /* Product Description start's______________________________________________ */
+
+    .product_content {
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 2px;
+    }
+
+    .prdctName {
+        word-wrap: break-word;
+        width: 125px;
+    }
+
+    .heart {
+        color: transparent;
+        font-size: 14px;
+        -webkit-text-stroke: 1px red;
+        cursor: pointer;
+        position: absolute;
+        right: 15px;
+        bottom: 145px;
+        transition: 0.2s;
+    }
+
+    .heart.fill {
+        color: red;
+    }
+
+    .aboutProduct {
+        font-size: 12px;
+        color: rgba(0, 0, 0, 0.7);
+        width: 140px;
+        margin-bottom: 5px;
+    }
+
+    .starRevwCnt {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .stars {
+        color: gold;
+        -webkit-text-stroke: 2px gold !important;
+        margin-bottom: -4px;
+    }
+
+    .stars i {
+        font-size: 16px !important;
+    }
+
+    .starHalf {
+        font-size: 16px !important;
+        color: transparent;
+        -webkit-text-stroke: 1px gold !important;
+        transform: scaleX(-1);
+    }
+
+    .prdct_Review_Count {
+        font-size: 12px;
+    }
+
+}
+
+@media screen and (max-width: 502px) {
+    
+
+    /* Footer css start's */
+
+footer {
+    color: white;
+    width: 100%;
+    padding: 40px 64px 64px 64px;
+    padding-bottom: 28px;
+    background-color: dodgerblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap: 5px;
+}
+
+footer .div1 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+    gap: 30px;
+}
+
+.logoMsg .footerLogo {
+    width: 80px;
+    height: 40px;
+    margin-left: 0 !important;
+}
+
+.logoMsg,
+.quickLinks,
+.connectUs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 185px;
+    gap: 8px;
+}
+
+.footerLinks {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.footerLinks li a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.footerLinks li a:hover {
+    color: rgb(101, 216, 255);
+}
+
+ul {
+    list-style: none;
+    padding-left: 0 !important;
+}
+
+.mediaLinks {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 15px;
+}
+
+.mediaLinks li a i {
+    font-size: 22px;
+    color: rgba(255, 255, 255, 0.9);
+    transition: all 0.2s;
+}
+
+.mediaLinks li a i:hover {
+    color: rgb(101, 216, 255);
+    transform: scale(1.1);
+}
+
+
+.copyRightDiv {
+    width: 100%;
+    padding-top: 30px;
+    border-top: 0.2px solid rgba(223, 223, 223, 0.5)
+}
 
 
 }
