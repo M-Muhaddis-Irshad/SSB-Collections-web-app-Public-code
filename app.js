@@ -1,3 +1,30 @@
+const supabaseApi = supabase.createClient('https://xyowgkiynvypiblztdjk.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inh5b3dna2l5bnZ5cGlibHp0ZGprIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjA0NDAyNDEsImV4cCI6MjA3NjAxNjI0MX0.pYmvrg0D6DSrLqI-A4IALR3Eoh_lex3vdwJ26wjsbnk')
+
+// console.log(supabaseApi);
+
+// Initially check that User is loggedin or not_____________________________
+const isUserLoggedIn = async () => {
+    const { data: {session}, error } = await supabaseApi.auth.getSession()
+
+    if (session == null) {
+        Swal.fire({
+            title: "User is not log in",
+            icon: "error",
+            showConfirmButton: false,
+            timer: 1000
+        });
+        setTimeout(() => {
+            window.location.href = 'allPages/login_signup/login/login.html';
+        }, 1000);
+    }
+    else {
+        console.log(error);
+    }
+
+}
+
+isUserLoggedIn()
+
 // NavBar toggling__________________________________________
 
 const navContainer = document.getElementById('navContainer');
@@ -424,3 +451,11 @@ function SubscribeEmailChecking() {
 const d = new Date();
 
 const year = document.getElementById('year').innerText = d.getFullYear();
+
+// async function out() {
+//     const { error } = await supabaseApi.auth.signOut()
+//     alert(error);
+    
+// }
+
+// out()
