@@ -1,0 +1,119 @@
+
+// Checking user is already signed in or not
+const checkSession = async () => {
+
+    const { data: { session }, error } = await supabaseApi.auth.getSession()
+
+    if (session !== null) {
+        alert("Already signed in please log in")
+        window.location.pathname = '../login/login.html';
+    }
+
+    console.log(session);
+}
+
+
+
+const register = async () => {
+
+    const { data, error } = await supabaseApi.auth.signUp(
+        {
+            email: email.value,
+            password: password.value,
+            options: {
+                data: {
+                    first_name: userName.value,
+                    // age: 27,
+                }
+            }
+        }
+    )
+
+}
+
+
+
+
+// Inputs shadow effect____________________________
+
+// const inputs = document.getElementsByTagName('input');
+
+// for (let i = 0; i < inputs.length; i++) {
+//     inputs[i].addEventListener('focus', (event) => {
+
+//         if (event.key === 'focus') {
+//             alert('Focus')
+//         }
+//         const inputsShadow = document.querySelectorAll('.inputShadow');
+//         for (let j = 0; j < inputsShadow.length; j++) {
+//             inputsShadow[j].classList.toggle('active')
+//         }
+//         console.log(event.type);
+//     })
+
+
+// }
+
+
+
+
+
+
+
+
+
+const checkInputs = () => {
+
+    for (let i = 0; i < inputArr.length; i++) {
+        const inputs = inputArr[i];
+        const value = inputs.value.trim();
+
+        if (value === "") {
+            alert(`${inputs.placeholder} can't be empty`)
+            return;
+        }
+
+        if (inputs === email && !emailRegex.test(email.value)) {
+            alert(`Email is'nt correct`)
+            break
+        }
+        else {
+            // register()
+            console.log(inputs[i].value.trim());
+        }
+    }
+
+}
+
+
+
+
+// inputArr.forEach(inputs => {
+//     if (inputs.value.trim() === "") {
+//         alert(`${inputs.placeholder} can't be empty`)
+//         return
+//     }
+//     if (inputs === email && !emailRegex.test(email.value)) {
+//         alert(`Email is'nt correct`)
+//     }
+// })
+
+
+
+
+
+
+// let btn = document.getElementById('btn');
+
+// function check(name, email, password) {
+//     console.log(`
+//         Name: ${name.value} 
+//         Email: ${email.value} 
+//         Password: ${password.value}`
+//         , ...inputArr);
+
+// }
+
+// btn.addEventListener('click', () => {
+//     check(...inputArr)
+// })
