@@ -347,7 +347,7 @@ products.forEach((products, index) => {
     const { title, image, image2, name, about, reviews, price } = products
 
     container.innerHTML += `
-                <div class="card" id="card-${index}">
+            <div class="card" id="card-${index}">
 
                 <a class="text-decoration-none text-black" href="allPages/product/product.html?title=${title}">
 
@@ -357,6 +357,7 @@ products.forEach((products, index) => {
 
                         <div class="prdctName_n_Hrt">
                             <h6 class="prdctName">${name}</h6>
+                            <i class="cart material-icons" id="cart-${index}" title="Add"> shopping_cart </i>
                         </div>
 
                         <div class="aboutProduct">${about}</div>
@@ -377,21 +378,20 @@ products.forEach((products, index) => {
 
                 </a>
 
-                <i class="heart material-icons" id="heart-${index}"  title="Like">favorite</i>
-
             </div>
 
     `
 
     setTimeout(() => {
 
-        // Heart Icon fill_________________________________________________________________
-        const heart = document.getElementById(`heart-${index}`)
+        // Cart Icon fill_________________________________________________________________
+        const heart = document.getElementById(`cart-${index}`)
 
         heart.addEventListener('click', (event) => {
-            event.stopPropagation();
+            event.preventDefault(); // Stops link navigation like (a)
+            event.stopPropagation(); // Stops bubbling
             heart.classList.toggle('fill');
-            heart.title = heart.classList.contains('fill') ? 'DisLike' : 'Like';
+            heart.title = heart.classList.contains('fill') ? 'Remove' : 'Add';
         });
 
 

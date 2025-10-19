@@ -895,3 +895,85 @@ abbr a img:hover {
 
 
 /* background: linear-gradient(to left , rgb(192, 0, 0),purple, rgb(0, 0, 204)); */
+
+
+
+
+
+
+
+
+
+
+
+
+
+products.forEach((products, index) => {
+
+    const { title, image, image2, name, about, reviews, price } = products
+
+    container.innerHTML += `
+                <div class="card" id="card-${index}">
+
+                <a class="text-decoration-none text-black" href="allPages/product/product.html?title=${title}">
+
+                    <div class="img_div" id='image-${index}' style="background-image: url(${image});">
+                    </div>
+                    <div class="product_content">
+
+                        <div class="prdctName_n_Hrt">
+                            <h6 class="prdctName">${name}</h6>
+                            <i class="heart material-icons" id="heart-${index}"  title="Like">favorite</i>
+                        </div>
+
+                        <div class="aboutProduct">${about}</div>
+
+                        <div class="starRevwCnt">
+                            <span class="stars">
+                                <i class="star material-icons">star</i>
+                                <i class="star material-icons">star</i>
+                                <i class="star material-icons">star</i>
+                                <i class="star material-icons">star</i>
+                                <i class="starHalf material-icons">star_half</i>
+                            </span>
+                            <span class="prdct_Review_Count">(${reviews} Reviews)</span>
+                        </div>
+
+                        <div class="prdctPrice">Rs ${price}</div>
+                    </div>
+
+                </a>
+
+            </div>
+
+    `
+
+    setTimeout(() => {
+
+        // Heart Icon fill_________________________________________________________________
+        const heart = document.getElementById(`heart-${index}`)
+
+        heart.addEventListener('click', (event) => {
+            event.preventDefault(); // Stops link navigation like (a)
+            event.stopPropagation(); // Stops bubbling
+            heart.classList.toggle('fill');
+            heart.title = heart.classList.contains('fill') ? 'DisLike' : 'Like';
+        });
+
+
+        // // Cards hover effect_____________________________________________________________________---
+        const card = document.getElementById(`card-${index}`);
+        const img = document.getElementById(`image-${index}`);
+
+        card.addEventListener('mouseover', () => {
+            img.style.backgroundImage = `url(${image2})`;
+            img.classList.add('transformImg');
+        })
+        card.addEventListener('mouseout', () => {
+            img.style.backgroundImage = `url(${image})`;
+            img.classList.remove('transformImg');
+        })
+
+    }, 0);
+
+});
