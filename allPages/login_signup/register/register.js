@@ -40,28 +40,7 @@ const createUser = async (name, email, password) => {
     }, 1500);
 }
 
-// const isUserLoggedIn = async () => {
-//     const { data, error } = await supabaseApi.auth.getSession()
-
-//     if (data) {
-//         Swal.fire({
-//             title: "User already logged in",
-//             icon: "warning",
-//             showConfirmButton: false,
-//             timer: 1000
-//         });
-//         setTimeout(() => {
-//             window.location.href = '../../../index.html';
-//         }, 1000);
-//     }
-//     else {
-//         console.log(error);
-
-//     }
-// }
-
-// isUserLoggedIn()
-
+// Checking inputs before creating user_______________________________
 function register() {
 
     // Inputs___________________________

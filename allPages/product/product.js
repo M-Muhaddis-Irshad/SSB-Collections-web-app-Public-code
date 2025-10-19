@@ -9,8 +9,8 @@ const products = [
 
         // Rs.900/- Google 30W Charger And Cable 30W Type C to Type C Fast Charging Supported
 
-        image: `../../logo_Imgs/Img_s/mobile_accessories/charger1.webp`,
-        image2: `../../logo_Imgs/Img_s/mobile_accessories/img2nd/googleCharger2-1.webp`,
+        image: `../../logo_Icons/Img_s/mobile_accessories/charger1.webp`,
+        image2: `../../logo_Icons/Img_s/mobile_accessories/img2nd/googleCharger2-1.webp`,
         name: `Google 30W Charger`,
         description: `Google 30W Charger And Cable 30W Type C to Type C Fast Charging Supported`,
         description1: `<h6 class="descriptionH6">Fast Charging:</h6> It is designed for fast charging, providing up to 30W power output, suitable for Google Pixel phones.`,
@@ -27,8 +27,8 @@ const products = [
         //without Checking @ Rs. 600
         //with Checking @ Rs. 650
 
-        image: `../../logo_Imgs/Img_s/mobile_accessories/earphones2.webp`,
-        image2: `../../logo_Imgs/Img_s/mobile_accessories/img2nd/earphone2-2.webp`,
+        image: `../../logo_Icons/Img_s/mobile_accessories/earphones2.webp`,
+        image2: `../../logo_Icons/Img_s/mobile_accessories/img2nd/earphone2-2.webp`,
         name: `Air 39 EarBuds RGB Transparent`,
         description: `RGB Transparent Wireless EarBuds`,
         description1: `<h6 class="descriptionH6">Bluetooth 5.3 Connectivity:</h6> For stable and efficient wireless connections. `,
@@ -43,8 +43,8 @@ const products = [
     {
         //Rs. 1000/- Bluetooth Wireless NeckBand Earphones 🎧 with long battery life (Stand By Time Approx 4 to 6 Days) Powerfull Base And Sound With microphone (Premium Quality) 
 
-        image: `../../logo_Imgs/Img_s/mobile_accessories/neckBand3.webp`,
-        image2: `../../logo_Imgs/Img_s/mobile_accessories/img2nd/neckBand2-3.webp`,
+        image: `../../logo_Icons/Img_s/mobile_accessories/neckBand3.webp`,
+        image2: `../../logo_Icons/Img_s/mobile_accessories/img2nd/neckBand2-3.webp`,
         name: `Wireless NeckBand`,
         description: `NeckBand Earphones 🎧 with long battery life`,
         description1: `<h6 class="descriptionH6">Wireless Connectivity:</h6> Features Bluetooth technology for a stable and cable-free audio experience.`,
@@ -59,8 +59,8 @@ const products = [
     {
         //Rs.3200/- each - Bluk’s Bx-301 Powerbank 20,000Mah With Led Display & Fast Charging with one year Official Company Warranty (Box Pack)
 
-        image: `../../logo_Imgs/Img_s/mobile_accessories/powerbank4.webp`,
-        image2: `../../logo_Imgs/Img_s/mobile_accessories/img2nd/powerBank2-4.webp`,
+        image: `../../logo_Icons/Img_s/mobile_accessories/powerbank4.webp`,
+        image2: `../../logo_Icons/Img_s/mobile_accessories/img2nd/powerBank2-4.webp`,
         name: `Bluk’s Bx-301 Powerbank`,
         description: `20,000Mah With Led Display & Fast Charging`,
         description1: `<h6 class="descriptionH6">High Capacity:</h6> It boasts a 20,000mAh Lithium-ion battery, suitable for multiple device charges.`,
@@ -75,8 +75,8 @@ const products = [
     {
         //Rs. 1250/- Sanag Portable Speaker High Quality Bass Sound With Cable (Box Pack) (Random Designs)
 
-        image: `../../logo_Imgs/Img_s/mobile_accessories/speaker5.webp`,
-        image2: `../../logo_Imgs/Img_s/mobile_accessories/img2nd/speaker2-5.webp`,
+        image: `../../logo_Icons/Img_s/mobile_accessories/speaker5.webp`,
+        image2: `../../logo_Icons/Img_s/mobile_accessories/img2nd/speaker2-5.webp`,
         name: `Sanag Portable Speaker`,
         description: `High Quality Bass Sound With Cable`,
         description1: `<h6 class="descriptionH6">Bluetooth Connectivity:</h6> They are Bluetooth speakers, likely featuring Bluetooth 5.0 for efficient wireless connection with devices.`,
@@ -97,8 +97,8 @@ const products = [
         // Smooth faux leather or coated canvas
         //Price Just 1200 Rs
 
-        image: `../../logo_Imgs/Img_s/purse/purse1.webp`,
-        image2: `../../logo_Imgs/Img_s/purse/img2nd/purse2-1.webp`,
+        image: `../../logo_Icons/Img_s/purse/purse1.webp`,
+        image2: `../../logo_Icons/Img_s/purse/img2nd/purse2-1.webp`,
         name: `Hijab Shoulder Bag`,
         description: `High Quality Bag With Digital Starp For Girls 💝`,
         description1: `<h6 class="descriptionH6">Elegant Design:</h6> It features a unique illustration of a woman in a hijab holding flowers, giving it a distinctive and elegant aesthetic.`,
@@ -116,8 +116,8 @@ const products = [
         //Price just Rs 2000/- fixed price
 
 
-        image: `../../logo_Imgs/Img_s/purse/purse2.webp`,
-        image2: `../../logo_Imgs/Img_s/purse/img2nd/purse2-2.webp`,
+        image: `../../logo_Icons/Img_s/purse/purse2.webp`,
+        image2: `../../logo_Icons/Img_s/purse/img2nd/purse2-2.webp`,
         name: `Louis Vuitton Bag`,
         description: `AAA Quality Louis Vuitton Tote Bag`,
         description1: `<h6 class="descriptionH6">Monogram Canvas:</h6> The main tote bag and accompanying pouch feature the iconic Louis Vuitton Monogram canvas in brown and tan.`,
@@ -134,8 +134,8 @@ const products = [
         //Stylish, compact & classy!  
         //Rs. 1450
 
-        image: `../../logo_Imgs/Img_s/purse/purse3.webp`,
-        image2: `../../logo_Imgs/Img_s/purse/img2nd/purse2-3.webp`,
+        image: `../../logo_Icons/Img_s/purse/purse3.webp`,
+        image2: `../../logo_Icons/Img_s/purse/img2nd/purse2-3.webp`,
         name: `Coach Medium Handbag`,
         description: `Stylish, compact & classy! Variety Shop`,
         description1: `<h6 class="descriptionH6">Design:</h6> It has a structured, rectangular silhouette with a flat base and top handles.`,
@@ -152,8 +152,8 @@ const products = [
         //Elegant design meets modern modesty!
         //Price: Rs. 1500/
 
-        image: `../../logo_Imgs/Img_s/purse/purse4.webp`,
-        image2: `../../logo_Imgs/Img_s/purse/img2nd/purse2-4.webp`,
+        image: `../../logo_Icons/Img_s/purse/purse4.webp`,
+        image2: `../../logo_Icons/Img_s/purse/img2nd/purse2-4.webp`,
         name: `Hijab Printed Handbag`,
         description: `Elegant design meets modern modesty!`,
         description1: `<h6 class="descriptionH6">Stylish Design:</h6> Features a unique graphic print of a woman holding flowers on a solid-colored background.`,
@@ -171,8 +171,8 @@ const products = [
         //Inside Pocket
         //Rs.1350/=
 
-        image: `../../logo_Imgs/Img_s/purse/purse5.webp`,
-        image2: `../../logo_Imgs/Img_s/purse/img2nd/purse2-5.webp`,
+        image: `../../logo_Icons/Img_s/purse/purse5.webp`,
+        image2: `../../logo_Icons/Img_s/purse/img2nd/purse2-5.webp`,
         name: `Tote Bag Big Size High Quality`,
         description: `High Quality Cynthetic Material`,
         description1: `<h6 class="descriptionH6">Design:</h6> Features a classic and timeless design with a sleek silhouette, making it a versatile wardrobe staple.`,
@@ -193,8 +193,8 @@ const products = [
         //Ultra light Soft n comfortable 
         //Rs.7,499.00 PKR
 
-        image: `../../logo_Imgs/Img_s/shoes/shoes1.webp`,
-        image2: `../../logo_Imgs/Img_s/shoes/img2nd/shoes2-1.webp`,
+        image: `../../logo_Icons/Img_s/shoes/shoes1.webp`,
+        image2: `../../logo_Icons/Img_s/shoes/img2nd/shoes2-1.webp`,
         name: `Skechers Arch Fit Branded`,
         description: `Ultra light Soft n comfortable!`,
         description1: `<h6 class="descriptionH6">Hands-Free Slip-ins:</h6> Designed for easy on and off without using hands, featuring a unique Heel Pillow™ for secure fit.`,
@@ -211,8 +211,8 @@ const products = [
         // Ultra light n comfortable
         //Rs.3500
 
-        image: `../../logo_Imgs/Img_s/shoes/shoes2.webp`,
-        image2: `../../logo_Imgs/Img_s/shoes/img2nd/shoes2-2.webp`,
+        image: `../../logo_Icons/Img_s/shoes/shoes2.webp`,
+        image2: `../../logo_Icons/Img_s/shoes/img2nd/shoes2-2.webp`,
         name: `Air force 1 from Nike`,
         description: `Branded Ultra light n comfortable`,
         description1: `<h6 class="descriptionH6">Iconic Design:</h6> Inspired by the original 1985 Air Jordan 1, offering a classic and recognizable low-top silhouette.`,
@@ -231,8 +231,8 @@ const products = [
         // Soft Comfortable 
         // Price Rs 4500/-
 
-        image: `../../logo_Imgs/Img_s/shoes/shoes3.webp`,
-        image2: `../../logo_Imgs/Img_s/shoes/img2nd/shoes2-3.webp`,
+        image: `../../logo_Icons/Img_s/shoes/shoes3.webp`,
+        image2: `../../logo_Icons/Img_s/shoes/img2nd/shoes2-3.webp`,
         name: `ULTRA GO SKECHERS`,
         description: `Imported China 🇨🇳 Soft Comfortable`,
         description1: `<h6 class="descriptionH6">Lightweight & Responsive ULTRA GO Cushioning:</h6> They incorporate lightweight and responsive ULTRA GO cushioning for enhanced comfort.`,
@@ -249,8 +249,8 @@ const products = [
         // Sole is best for outdoors lovers
         // Rs 8,099
 
-        image: `../../logo_Imgs/Img_s/shoes/shoes4.webp`,
-        image2: `../../logo_Imgs/Img_s/shoes/img2nd/shoes2-4.webp`,
+        image: `../../logo_Icons/Img_s/shoes/shoes4.webp`,
+        image2: `../../logo_Icons/Img_s/shoes/img2nd/shoes2-4.webp`,
         name: `Skechers D'LUX Flex Groove`,
         description: `Sole is best for outdoors lovers`,
         description1: `<h6 class="descriptionH6">Slip-on style:</h6> Features a breathable athletic mesh upper with a convenient slip-on design.`,
@@ -267,8 +267,8 @@ const products = [
         // Medicated Soft Comfortable 
         // Price 2000/- Fixed
 
-        image: `../../logo_Imgs/Img_s/shoes/slipper5.webp`,
-        image2: `../../logo_Imgs/Img_s/shoes/img2nd/slipper2-5.webp`,
+        image: `../../logo_Icons/Img_s/shoes/slipper5.webp`,
+        image2: `../../logo_Icons/Img_s/shoes/img2nd/slipper2-5.webp`,
         name: `Skechers Mens Slides`,
         description: `Medicated Soft Comfortable`,
         description1: `<h6 class="descriptionH6">Style:</h6> These are men's sandals or slides, featuring an open-toe design.`,
@@ -285,8 +285,8 @@ const products = [
 
     {
 
-        image: `../../logo_Imgs/Img_s/watches/watch1.webp`,
-        image2: `../../logo_Imgs/Img_s/watches/img2nd/watch2-1.webp`,
+        image: `../../logo_Icons/Img_s/watches/watch1.webp`,
+        image2: `../../logo_Icons/Img_s/watches/img2nd/watch2-1.webp`,
         name: `Lige Foxbox Mens Watch`,
         description: `LIGE FOXBOX 0011 Watches For Men Luxury Brand Sport Quartz Wristwatch Waterproof Digital Clock Men Watch Relogio Masculino`,
         description1: `<h6 class="descriptionH6">Dual Display:</h6> Features both analog (with luminous hands) and digital time displays.`,
@@ -301,8 +301,8 @@ const products = [
     {
         // Rs.1500/- each - Rolex Yacht-Master Date Just With Date Heavy Master Lock Steel Buzzle Working With MODERN WATCHES NAME BOX 📦 (Premium Quality)
 
-        image: `../../logo_Imgs/Img_s/watches/watch2.webp`,
-        image2: `../../logo_Imgs/Img_s/watches/img2nd/watch2-2-2.webp`,
+        image: `../../logo_Icons/Img_s/watches/watch2.webp`,
+        image2: `../../logo_Icons/Img_s/watches/img2nd/watch2-2-2.webp`,
         name: `Rolex Yacht-Master`,
         description1: `<h6 class="descriptionH6">Design:</h6> Features a black dial, black bezel with gold accents, and a black rubber strap, complemented by a gold-toned case and clasp.`,
         description2: `<h6 class="descriptionH6">Bezel:</h6> Equipped with a rotating bezel, useful for tracking elapsed time, particularly in nautical contexts.`,
@@ -326,8 +326,8 @@ const products = [
 
 
 
-        image: `../../logo_Imgs/Img_s/watches/watch3.webp`,
-        image2: `../../logo_Imgs/Img_s/watches/img2nd/watch2-3.webp`,
+        image: `../../logo_Icons/Img_s/watches/watch3.webp`,
+        image2: `../../logo_Icons/Img_s/watches/img2nd/watch2-3.webp`,
         name: `BESTWIN DUAL TIME WATCH`,
         description: `TRENDY STYLE WATER RESISTANCE`,
         description1: `<h6 class="descriptionH6">Two-Tone Design:</h6> Features a striking silver and gold color scheme on both the case and the stainless steel band.`,
@@ -345,8 +345,8 @@ const products = [
         // Pack of 3: Rs.1000 With Box 🔥 
         // (For Her)
 
-        image: `../../logo_Imgs/Img_s/watches/watch4.webp`,
-        image2: `../../logo_Imgs/Img_s/watches/img2nd/watch2-4.webp`,
+        image: `../../logo_Icons/Img_s/watches/watch4.webp`,
+        image2: `../../logo_Icons/Img_s/watches/img2nd/watch2-4.webp`,
         name: `Digital LED Watche`,
         description: `Luxury design best for female`,
         description1: `<h6 class="descriptionH6">Touch LED Display:</h6> Features a touch-sensitive LED screen to show the time.`,
@@ -365,8 +365,8 @@ const products = [
         //Fiber watch
         //Price 1,499/- Only
 
-        image: `../../logo_Imgs/Img_s/watches/watch5.webp`,
-        image2: `../../logo_Imgs/Img_s/watches/img2nd/watch2-5.webp`,
+        image: `../../logo_Icons/Img_s/watches/watch5.webp`,
+        image2: `../../logo_Icons/Img_s/watches/img2nd/watch2-5.webp`,
         name: `Arabic Marble Aura`,
         description1: `<h6 class="descriptionH6">Design:</h6> The watch features a black and white split dial, reminiscent of a Yin and Yang symbol, with Arabic numerals for the hours.`,
         description2: `<h6 class="descriptionH6">Color and Material:</h6> It has a matte black finish, including the case and the metal link strap.`,
