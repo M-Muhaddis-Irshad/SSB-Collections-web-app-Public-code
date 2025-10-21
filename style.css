@@ -87,10 +87,15 @@ abbr a img:hover {
 
 
 .navbarToggler {
-    display: none;
-    padding: 10px;
+    padding: 9px;
     border: none;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
     cursor: pointer;
+    
 }
 
 /* .navbarToggler:hover {} */
@@ -99,7 +104,7 @@ abbr a img:hover {
     display: block;
     width: 35px;
     height: 4px;
-    margin: 5px auto;
+    /* margin: 5px auto; */
     background-color: lightslategrey;
     border-radius: 5px;
     transition: all 0.2s ease-in-out;
@@ -517,7 +522,7 @@ body.active {
         justify-content: start;
         justify-content: space-between;
         align-items: center;
-        position: relative;
+        position: sticky;
         backdrop-filter: blur(10px);
         transition: all 0.2s;
     }
@@ -525,10 +530,12 @@ body.active {
     .navbarLclCss.active {
         backdrop-filter: none;
         background-color: rgba(0, 162, 255, 0.7);
+        position: relative;
     }
 
     .navLinks {
         width: 200px;
+        width: 100%;
         height: 100vh !important;
         padding: 70px 24px;
         backdrop-filter: blur(10px);
@@ -562,14 +569,8 @@ body.active {
         box-shadow: 0px 0px 10px rgb(0, 0, 0, 0.5);
     }
 
-
-
-    /* .navLinks span a::after {
-        background-color: transparent;
-    } */
-
     .navbarToggler {
-        display: block;
+        display: flex;
         z-index: 999;
     }
 
@@ -761,11 +762,11 @@ body.active {
 
 }
 
-@media screen and (max-width: 502px) {
+@media screen and (max-width: 500px) {
 
     /* Navbar______________________________________ */
-    
-    
+
+
     .navLinks {
         width: 100%;
     }
@@ -778,25 +779,12 @@ body.active {
 
     .newsLetterContainer {
         width: 100%;
-        /* padding: 50px;
-        display: flex;
-        flex-direction: column;
-        align-items: center; */
         text-align: center;
-        /* gap: 10px;
-        margin-top: 50px;
-        background-color: #e2e4e9; */
     }
-
-    /* .letterHeading {
-        font-weight: 700;
-    }
-
-    .letterMsg {
-        font-size: 16px;
-    } */
 
     .letterInpBtn {
+        font-size: large !important;
+        width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -805,31 +793,17 @@ body.active {
 
     .letterInp {
         font-size: 16px;
-        width: 400px;
+        max-width: 90% !important;
         padding: 8px;
-        border: 1px solid lightgray;
-        border-radius: 8px;
+        border: 1px solid lightGray;
+        border-radius: 12px;
     }
-
-    /* .letterInp:focus {
-        outline: 0.5px solid dodgerblue;
-    } */
 
     .subBtn {
         border-radius: 8px;
-        width: 100px;
+        max-width: 50% !important;
         padding: 8px;
-        /* color: white;
-        font-weight: 600;
-        background-color: dodgerblue; */
-        /* border: none; */
-        /* cursor: pointer;
-        transition: 0.3s; */
     }
-
-    /* .subBtn:hover {
-        background-color: rgb(0, 113, 226);
-    } */
 
     /* Newsletter____________________________________ */
 
@@ -949,8 +923,55 @@ body.active {
 
 }
 
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 450px) {
+
+    /* Hero Section */
+
+
+    .hero_section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 10px;
+        margin-bottom: 20px;
+        padding-block: 60px;
+        background-color: dodgerblue;
+    }
+
+    .welcome {
+        color: white;
+        font-weight: bold;
+    }
+
+    .welcome_msg {
+        color: white;
+        font-size: 20px;
+    }
+
+    .hero_sect_btn {
+        color: dodgerblue;
+        font-weight: 600;
+        border: none;
+        padding: 10px 20px;
+        border: 1px solid transparent;
+        border-radius: 8px;
+        transition: all 0.5s;
+    }
+
+    .hero_sect_btn:hover {
+        color: white;
+        background-color: transparent;
+        border-color: cyan;
+        transform: scale(1.1);
+    }
+
+    /* Hero Section */
+
+}
+
+/* @media screen and (max-width: 350px) {
     .navLinks {
         width: 150px;
     }
-}
+} */
