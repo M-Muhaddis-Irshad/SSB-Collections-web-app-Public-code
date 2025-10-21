@@ -25,8 +25,10 @@ const supabaseApi = supabase.createClient('https://xyowgkiynvypiblztdjk.supabase
 
 // isUserLoggedIn()
 
+{
 // NavBar toggling__________________________________________
 
+// const  body = document.getElementsByTagName("body");
 const navContainer = document.getElementById('navContainer');
 const toggleBar = document.getElementById('toggleBar');
 const navLinks = document.getElementById('navLinks');
@@ -35,7 +37,10 @@ toggleBar.addEventListener('click', () => {
     navContainer.classList.toggle('active');
     toggleBar.classList.toggle('active');
     navLinks.classList.toggle('active');
+    
+    document.body.classList.toggle('active')
 })
+}
 
 // Array of objects with product details____________________________________________
 
@@ -342,75 +347,78 @@ const products = [
 
 // Product Cards creating_________________________________________________________
 
-products.forEach((products, index) => {
+// products.forEach((products, index) => {
 
-    const { title, image, image2, name, about, reviews, price } = products
+//     const { title, image, image2, name, about, reviews, price } = products
 
-    container.innerHTML += `
-            <div class="card" id="card-${index}">
+//     container.innerHTML += `
+//             <div class="card" id="card-${index}">
 
-                <a class="text-decoration-none text-black" href="allPages/product/product.html?title=${title}">
+//                 <a class="text-decoration-none text-black" href="allPages/product/product.html?title=${title}">
 
-                    <div class="img_div" id='image-${index}' style="background-image: url(${image});">
-                    </div>
-                    <div class="product_content">
+//                     <div class="img_div" id='image-${index}' style="background-image: url(${image});">
+//                     </div>
+//                     <div class="product_content">
 
-                        <div class="prdctName_n_Hrt">
-                            <h6 class="prdctName">${name}</h6>
-                            <i class="cart material-icons" id="cart-${index}" title="Add"> shopping_cart </i>
-                        </div>
+//                         <div class="prdctName_n_Hrt">
+//                             <h6 class="prdctName">${name}</h6>
+                            
+//                             <!-- <i class="cart material-icons" id="cart-${index}" title="Add"> shopping_cart </i> -->
+                            
+//                             <i class="cart material-icons" id="cart-${index}"  title="Like">favorite</i>
+//                         </div>
 
-                        <div class="aboutProduct">${about}</div>
+//                         <div class="aboutProduct">${about}</div>
 
-                        <div class="starRevwCnt">
-                            <span class="stars">
-                                <i class="star material-icons">star</i>
-                                <i class="star material-icons">star</i>
-                                <i class="star material-icons">star</i>
-                                <i class="star material-icons">star</i>
-                                <i class="starHalf material-icons">star_half</i>
-                            </span>
-                            <span class="prdct_Review_Count">(${reviews} Reviews)</span>
-                        </div>
+//                         <div class="starRevwCnt">
+//                             <span class="stars">
+//                                 <i class="star material-icons">star</i>
+//                                 <i class="star material-icons">star</i>
+//                                 <i class="star material-icons">star</i>
+//                                 <i class="star material-icons">star</i>
+//                                 <i class="starHalf material-icons">star_half</i>
+//                             </span>
+//                             <span class="prdct_Review_Count">(${reviews} Reviews)</span>
+//                         </div>
 
-                        <div class="prdctPrice">Rs ${price}</div>
-                    </div>
+//                         <div class="prdctPrice">Rs ${price}</div>
+//                     </div>
 
-                </a>
+//                 </a>
 
-            </div>
+//             </div>
 
-    `
+//     `
 
-    setTimeout(() => {
+//     setTimeout(() => {
 
-        // Cart Icon fill_________________________________________________________________
-        const heart = document.getElementById(`cart-${index}`)
+//         // Cart Icon fill_________________________________________________________________
+//         const heart = document.getElementById(`cart-${index}`)
 
-        heart.addEventListener('click', (event) => {
-            event.preventDefault(); // Stops link navigation like (a)
-            event.stopPropagation(); // Stops bubbling
-            heart.classList.toggle('fill');
-            heart.title = heart.classList.contains('fill') ? 'Remove' : 'Add';
-        });
+//         heart.addEventListener('click', (event) => {
+//             event.preventDefault(); // Stops link navigation like (a)
+//             event.stopPropagation(); // Stops bubbling
+//             heart.classList.toggle('fill');
+//             heart.title = heart.classList.contains('fill') ? 'Remove' : 'Add';
+//         });
 
 
-        // // Cards hover effect_____________________________________________________________________---
-        const card = document.getElementById(`card-${index}`);
-        const img = document.getElementById(`image-${index}`);
+//         // // Cards hover effect_____________________________________________________________________---
+//         const card = document.getElementById(`card-${index}`);
+//         const img = document.getElementById(`image-${index}`);
 
-        card.addEventListener('mouseover', () => {
-            img.style.backgroundImage = `url(${image2})`;
-            img.classList.add('transformImg');
-        })
-        card.addEventListener('mouseout', () => {
-            img.style.backgroundImage = `url(${image})`;
-            img.classList.remove('transformImg');
-        })
+//         card.addEventListener('mouseover', () => {
+//             img.style.backgroundImage = `url(${image2})`;
+//             img.classList.add('transformImg');
+//         })
+//         card.addEventListener('mouseout', () => {
+//             img.style.backgroundImage = `url(${image})`;
+//             img.classList.remove('transformImg');
+//         })
 
-    }, 0);
+//     }, 0);
 
-});
+// });
 
 
 // NewsLetter_____________________________________________________________
@@ -419,7 +427,11 @@ const emailRagex = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
 
 const subscribeInput = document.getElementById('letterMail');
 
-function SubscribeEmailChecking() {
+subscribeInput.addEventListener('keypress', (event) => {
+    (event.key === 'Enter') ? SubscribeToNewsLetter() : null;
+})
+
+function SubscribeToNewsLetter() {
 
     if (!subscribeInput.value.trim()) {
         Swal.fire({
@@ -452,11 +464,3 @@ function SubscribeEmailChecking() {
 const d = new Date();
 
 const year = document.getElementById('year').innerText = d.getFullYear();
-
-// async function out() {
-//     const { error } = await supabaseApi.auth.signOut()
-//     alert(error);
-    
-// }
-
-// out()
