@@ -1,17 +1,33 @@
 // NavBar toggling__________________________________________
+{
+    const navContainer = document.getElementById('navContainer');
+    const toggleBar = document.getElementById('toggleBar');
+    const navLinks = document.getElementById('navLinks');
+    // Check if scrollbar is on top of the window or not__________________
+    {
+        window.addEventListener("scroll", () => {
+            const scroll = this.scrollY;
+            (scroll === 0) ? navContainer.classList.remove('scrlStart') : navContainer.classList.add('scrlStart')
+            // console.log(`${scroll}% Scroll`)
+        });
+    }
+    // Add EventListener on ToggleBar__________________
+    {
+        toggleBar.addEventListener('click', () => {
+            navContainer.classList.toggle('active');
+            toggleBar.classList.toggle('active');
+            navLinks.classList.toggle('active');
+            document.body.classList.toggle('active')
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        })
+    }
+}
 
-// const  body = document.getElementsByTagName("body");
-const navContainer = document.getElementById('navContainer');
-const toggleBar = document.getElementById('toggleBar');
-const navLinks = document.getElementById('navLinks');
-
-toggleBar.addEventListener('click', () => {
-    navContainer.classList.toggle('active');
-    toggleBar.classList.toggle('active');
-    navLinks.classList.toggle('active');
-    document.body.classList.toggle('active')
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-})
+// Hero section______________
+const video = document.querySelector('.hero_video');
+if (window.innerWidth < 600 && video) {
+    video.style.display = 'none';
+}
 
 
 // NewsLetter_____________________________________________________________

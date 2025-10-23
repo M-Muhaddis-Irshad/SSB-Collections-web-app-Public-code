@@ -5,44 +5,52 @@ const supabaseApi = supabase.createClient('https://xyowgkiynvypiblztdjk.supabase
 // Initially check that User is loggedin or not_____________________________
 
 {
-// const isUserLoggedIn = async () => {
-//     const { data: {session}, error } = await supabaseApi.auth.getSession()
+    // const isUserLoggedIn = async () => {
+    //     const { data: {session}, error } = await supabaseApi.auth.getSession()
 
-//     if (session == null) {
-//         Swal.fire({
-//             title: "User is not log in",
-//             icon: "error",
-//             showConfirmButton: false,
-//             timer: 1000
-//         });
-//         setTimeout(() => {
-//             window.location.href = 'allPages/login_signup/login/login.html';
-//         }, 1000);
-//     }
-//     else {
-//         console.log(error);
-//     }
+    //     if (session == null) {
+    //         Swal.fire({
+    //             title: "User is not log in",
+    //             icon: "error",
+    //             showConfirmButton: false,
+    //             timer: 1000
+    //         });
+    //         setTimeout(() => {
+    //             window.location.href = 'allPages/login_signup/login/login.html';
+    //         }, 1000);
+    //     }
+    //     else {
+    //         console.log(error);
+    //     }
 
-// }
+    // }
 
-// isUserLoggedIn()
+    // isUserLoggedIn()
 }
 
 // NavBar toggling__________________________________________
-
 {
-    // const  body = document.getElementsByTagName("body");
     const navContainer = document.getElementById('navContainer');
     const toggleBar = document.getElementById('toggleBar');
     const navLinks = document.getElementById('navLinks');
-
-    toggleBar.addEventListener('click', () => {
-        navContainer.classList.toggle('active');
-        toggleBar.classList.toggle('active');
-        navLinks.classList.toggle('active');
-        document.body.classList.toggle('active')
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    })
+    // Check if scrollbar is on top of the window or not__________________
+    {
+        window.addEventListener("scroll", () => {
+            const scroll = this.scrollY;
+            (scroll === 0) ? navContainer.classList.remove('scrlStart') : navContainer.classList.add('scrlStart')
+            // console.log(`${scroll}% Scroll`)
+        });
+    }
+    // Add EventListener on ToggleBar__________________
+    {
+        toggleBar.addEventListener('click', () => {
+            navContainer.classList.toggle('active');
+            toggleBar.classList.toggle('active');
+            navLinks.classList.toggle('active');
+            document.body.classList.toggle('active')
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        })
+    }
 }
 
 // Array of objects with product details____________________________________________
@@ -65,17 +73,17 @@ const products = [
         category: `Mobile_Accessories`
     },
     {
-        //Air 39 RGB Transparent Wireless EarBuds with Pouch
+        //Air 31 RGB Transparent Wireless EarBuds with Pouch
         //without Checking @ Rs. 600
         //with Checking @ Rs. 650
 
         image: `logo_Icons/Img_s/mobile_accessories/earphones2.webp`,
         image2: `logo_Icons/Img_s/mobile_accessories/img2nd/earphone2-2.webp`,
-        name: `Air 39 EarBuds RGB Transparent`,
+        name: `Air 31 EarBuds RGB Transparent`,
         about: `RGB Transparent Wireless EarBuds`,
         reviews: `652`,
         price: `799`,
-        title: `Air-39`,
+        title: `Air-31`,
         category: `Mobile_Accessories`
     },
     {
@@ -426,6 +434,7 @@ products.forEach((products, index) => {
 
 // NewsLetter_____________________________________________________________
 
+{
 const emailRagex = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
 
 const subscribeInput = document.getElementById('letterMail');
@@ -472,7 +481,7 @@ function SubscribeToNewsLetter() {
     }
 
 }
-
+}
 
 // CopyRight-Claim Date___________________________________
 

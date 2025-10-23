@@ -1090,3 +1090,27 @@ products.forEach((products, index) => {
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // console.log((window.scrollY === 0) ? 'ontop' : 'notOntop');
+
+        // window.addEventListener('scroll', event => {
+
+        //     console.log((event === 0) ? 'ontop' : 'notOntop');
+
+
+        // })

@@ -1,3 +1,30 @@
+// NavBar toggling__________________________________________
+{
+    const navContainer = document.getElementById('navContainer');
+    const toggleBar = document.getElementById('toggleBar');
+    const navLinks = document.getElementById('navLinks');
+    // Check if scrollbar is on top of the window or not__________________
+    {
+        window.addEventListener("scroll", () => {
+            const scroll = this.scrollY;
+            (scroll === 0) ? navContainer.classList.remove('scrlStart') : navContainer.classList.add('scrlStart')
+            // console.log(`${scroll}% Scroll`)
+        });
+    }
+    // Add EventListener on ToggleBar__________________
+    {
+        toggleBar.addEventListener('click', () => {
+            navContainer.classList.toggle('active');
+            toggleBar.classList.toggle('active');
+            navLinks.classList.toggle('active');
+            document.body.classList.toggle('active')
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        })
+    }
+}
+
+
+
 const Container = document.getElementById('cardContainer')
 
 
@@ -23,13 +50,13 @@ const products = [
         category: `Mobile_Accessories`
     },
     {
-        //Air 39 RGB Transparent Wireless EarBuds with Pouch
+        //Air 31 RGB Transparent Wireless EarBuds with Pouch
         //without Checking @ Rs. 600
         //with Checking @ Rs. 650
 
         image: `../../logo_Icons/Img_s/mobile_accessories/earphones2.webp`,
         image2: `../../logo_Icons/Img_s/mobile_accessories/img2nd/earphone2-2.webp`,
-        name: `Air 39 EarBuds RGB Transparent`,
+        name: `Air 31 EarBuds RGB Transparent`,
         description: `RGB Transparent Wireless EarBuds`,
         description1: `<h6 class="descriptionH6">Bluetooth 5.3 Connectivity:</h6> For stable and efficient wireless connections. `,
         description2: `<h6 class="descriptionH6">Transparent Charging Case:</h6> A distinctive design element, often with an LED display for battery status.`,
@@ -37,7 +64,7 @@ const products = [
         description4: `<h6 class="descriptionH6">Noise Reduction Technology:</h6> For clearer calls and an enhanced listening experience.`,
         reviews: `652`,
         price: `799`,
-        title: `Air-39`,
+        title: `Air-31`,
         category: `Mobile_Accessories`
     },
     {
