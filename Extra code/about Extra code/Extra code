@@ -1,0 +1,41 @@
+
+/* .hero_section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding-block: 60px;
+    background-color: dodgerblue;
+}
+
+.welcome {
+    color: white;
+    font-weight: bold;
+}
+
+.welcome_msg {
+    color: white;
+    font-size: 20px;
+}
+
+.hero_sect_btn {
+    color: dodgerblue;
+    font-weight: 600;
+    border: none;
+    padding: 10px 20px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    transition: all 0.5s;
+}
+
+.hero_sect_btn:hover {
+    color: white;
+    background-color: transparent;
+    border-color: cyan;
+    transform: scale(1.1);
+}
+
+.hero_sect_btn a {
+    text-decoration: none;
+} */

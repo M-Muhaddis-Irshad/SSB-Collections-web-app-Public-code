@@ -19,6 +19,7 @@ body {
     position: sticky;
     top: 0;
     z-index: 999;
+    transition: all 0.2s;
 }
 
 .navbarLclCss.scrlStart {
@@ -109,12 +110,14 @@ abbr a img:hover {
     display: block;
     width: 35px;
     height: 4px;
-    /* margin: 5px auto; */
-    background-color: lightslategrey;
+    background-color: rgb(0, 83, 166);
     border-radius: 5px;
     transition: all 0.2s ease-in-out;
 }
 
+.bar.active {
+    background-color: rgb(123, 0, 0);
+}
 
 /* Navbar Toggler (HamBurger) */
 
@@ -132,193 +135,92 @@ abbr a img:hover {
 
 /* Hero Section */
 
-/* =========================
-   HERO SECTION (Video + px)
-   ========================= */
 .hero_section {
-  position: relative;
-  width: 100%;
-  height: 700px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  color: white;
-  text-align: center;
-}
-
-/* Video background */
-.hero_video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 0;
-}
-
-/* Overlay for better readability */
-.hero_overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    rgba(0, 102, 255, 0.6),
-    rgba(0, 102, 255, 0.8)
-  );
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-}
-
-/* Text content */
-.hero_content {
-  position: relative;
-  z-index: 2;
-  max-width: 800px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 15px;
-}
-
-.hero_title {
-  font-size: 45px;
-  font-weight: 800;
-  line-height: 55px;
-}
-
-.hero_title span {
-  color: cyan;
-}
-
-.hero_text {
-  font-size: 20px;
-  max-width: 650px;
-  color: rgba(255, 255, 255, 0.9);
-  margin-top: 10px;
-}
-
-/* CTA Button */
-.hero_btn {
-  background-color: white;
-  border: none;
-  border-radius: 8px;
-  padding: 12px 28px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  margin-top: 25px;
-}
-
-.hero_btn a {
-  text-decoration: none;
-  color: dodgerblue;
-  font-weight: 700;
-  font-size: 18px;
-}
-
-.hero_btn:hover {
-  background-color: transparent;
-  border: 2px solid cyan;
-  transform: scale(1.05);
-}
-
-.hero_btn:hover a {
-  color: white;
-}
-
-/* =========================
-   RESPONSIVE (px-based)
-   ========================= */
-@media screen and (max-width: 768px) {
-  .hero_section {
-    height: 550px;
-  }
-
-  .hero_title {
-    font-size: 34px;
-    line-height: 44px;
-  }
-
-  .hero_text {
-    font-size: 16px;
-    padding: 0 20px;
-  }
-
-  .hero_btn {
-    padding: 10px 24px;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .hero_section {
-    height: 480px;
-  }
-
-  .hero_title {
-    font-size: 26px;
-    line-height: 36px;
-  }
-
-  .hero_text {
-    font-size: 15px;
-    max-width: 320px;
-  }
-
-  .hero_btn {
-    padding: 8px 20px;
-  }
-
-  .hero_btn a {
-    font-size: 16px;
-  }
-}
-
-
-/* .hero_section {
+    position: relative;
+    height: 300px;
+    overflow: hidden;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: 10px;
-    margin-bottom: 20px;
-    padding-block: 60px;
-    background-color: dodgerblue;
+    justify-content: center;
 }
 
-.welcome {
+.bg_video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: auto;
+    object-fit: cover;
+    z-index: -2;
+}
+
+.actl_video {
+    width: 100%;
+    height: 300px;
+}
+
+.video_overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+.hero_content {
+    color: #fff;
+    text-align: center;
+    animation: fadeInUp 1.5s ease forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.hero_content h1 {
+    font-size: 44.8px;
+    margin-bottom: 16px;
+    font-weight: 700;
+}
+
+.hero_content span {
+    color: #00bfff;
+}
+
+.hero_content p {
+    font-size: 16.6px;
+    opacity: 0.9;
+    margin-bottom: 32px;
+}
+
+/* Button */
+.shopNow_btn {
+    padding: 10px 28px;
+    background-color: #00bfff;
     color: white;
-    font-weight: bold;
-}
-
-.welcome_msg {
-    color: white;
-    font-size: 20px;
-}
-
-.hero_sect_btn {
-    color: dodgerblue;
-    font-weight: 600;
     border: none;
-    padding: 10px 20px;
-    border: 1px solid transparent;
-    border-radius: 8px;
-    transition: all 0.5s;
+    border-radius: 6px;
+    font-size: 17px;
+    cursor: pointer;
+    transition: 0.3s ease;
 }
 
-.hero_sect_btn:hover {
-    color: white;
-    background-color: transparent;
-    border-color: cyan;
-    transform: scale(1.1);
+.shopNow_btn:hover {
+    background-color: #007acc;
+    transform: scale(1.05);
 }
 
-.hero_sect_btn a {
-    text-decoration: none;
-} */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
 /* Hero Section */
 
@@ -333,132 +235,15 @@ abbr a img:hover {
 /* Body css start's */
 
 .body {
-    width: 95% !important;
-    margin: auto;
+    background-color: #e4e4e4;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center !important;
-    gap: 20px;
+    align-items: center;
 }
 
-.about_heading {
-    font-weight: 700;
+.aboutHeading {
+    color: white;
 }
-
-.cards_container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-
-
-/* Product Card CSS start's______________________________________________ */
-
-.card {
-    width: 200px;
-    max-width: 200px !important;
-    min-width: 200px !important;
-    padding: 0 !important;
-    overflow: hidden;
-    border-radius: 8px;
-    position: relative;
-    transition: all 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    filter: drop-shadow(0px 8px 4px rgba(0, 0, 0, 0.450));
-}
-
-
-.img_div {
-    width: 200px;
-    height: 210px;
-    /* background-image: url(logo_Imgs/Img_s/watches/img2nd/watch2-3.jpg); */
-    background-size: 220px 220px;
-    background-repeat: no-repeat;
-    border: none;
-    transition: all 0.2s;
-}
-
-.img_div.transformImg {
-    transform: translateY(-2px);
-}
-
-/* Product Description start's______________________________________________ */
-
-.product_content {
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 2px;
-}
-
-.prdctName {
-    word-wrap: break-word;
-    width: 125px;
-}
-
-.cart {
-    color: transparent;
-    font-size: 14px;
-    -webkit-text-stroke: 1px red;
-    cursor: pointer;
-    position: absolute;
-    right: 15px;
-    bottom: 145px;
-    transition: 0.2s;
-}
-
-.cart.fill {
-    color: red;
-}
-
-.aboutProduct {
-    font-size: 12px;
-    color: rgba(0, 0, 0, 0.7);
-    width: 140px;
-    margin-bottom: 5px;
-}
-
-.starRevwCnt {
-    display: flex;
-    flex-direction: column;
-}
-
-.stars {
-    color: gold;
-    -webkit-text-stroke: 2px gold !important;
-    margin-bottom: -4px;
-}
-
-.stars i {
-    font-size: 16px !important;
-}
-
-.starHalf {
-    font-size: 16px !important;
-    color: transparent;
-    -webkit-text-stroke: 1px gold !important;
-    transform: scaleX(-1);
-}
-
-.prdct_Review_Count {
-    font-size: 12px;
-}
-
-.prdctPrice {
-    font-weight: 500;
-}
-
-/* Product Description end's______________________________________________ */
-
-
-/* Product Card CSS end's______________________________________________ */
 
 
 
@@ -483,7 +268,7 @@ abbr a img:hover {
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    margin-top: 50px;
+    /* margin-top: 50px; */
     background-color: #e2e4e9;
 }
 
@@ -666,6 +451,21 @@ body.active {
 
 /* Media Queries start's______________________________________________________________ */
 
+@media (max-width: 768px) {
+    .hero_section {
+        height: 50vh;
+    }
+
+    .hero_content h1 {
+        font-size: 28.8px;
+    }
+
+    .hero_content p {
+        font-size: 16px;
+    }
+}
+
+
 @media screen and (max-width: 750px) {
 
     .navbarLclCss {
@@ -741,179 +541,6 @@ body.active {
         transform: translateY(-9px) rotate(-45deg);
     }
 
-
-}
-
-@media screen and (max-width: 678px) {
-
-    .cards_container {
-        gap: 10px;
-    }
-
-    .card {
-        width: 280px !important;
-        max-width: 1000px !important;
-    }
-
-    .img_div {
-        width: 100%;
-        height: 290px;
-        background-size: 100% 100%;
-    }
-
-    .product_content {
-        display: flex;
-        gap: 2px;
-    }
-
-    .prdctName {
-        font-size: x-large;
-        width: 190px !important;
-    }
-
-    .cart {
-        font-size: 28px !important;
-        bottom: 155px;
-    }
-
-    .aboutProduct {
-        font-size: 14px !important;
-        color: rgba(0, 0, 0, 0.7);
-        width: 160px;
-        margin-bottom: 3px;
-    }
-
-    .stars {
-        color: gold;
-        -webkit-text-stroke: 2px gold !important;
-        margin-bottom: -2px !important;
-    }
-
-    .stars i {
-        font-size: 18px !important;
-    }
-
-    .starHalf {
-        font-size: 18px !important;
-    }
-
-    .prdct_Review_Count {
-        font-size: 14px !important;
-    }
-
-    .prdctPrice {
-        font-size: large;
-        font-weight: 500;
-    }
-
-}
-
-
-@media screen and (max-width: 600px) {
-
-    .cards_container {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 10px;
-    }
-
-
-
-    /* Product Card CSS start's______________________________________________ */
-
-    .card {
-        width: 280px !important;
-        max-width: 1000px !important;
-        /* margin: 5px 10px; */
-        /* overflow: hidden; */
-        /* border-radius: 8px; */
-        /* position: relative; */
-        /* transition: all 0.3s; */
-    }
-
-    /* 
-    .card:hover {
-        transform: translateY(-5px);
-        filter: drop-shadow(0px 8px 4px rgba(0, 0, 0, 0.450));
-    } */
-
-
-    .img_div {
-        width: 100%;
-        height: 270px;
-        background-size: 100% 100%;
-        background-repeat: no-repeat;
-        border: none;
-        transition: all 0.2s;
-    }
-
-    .img_div.transformImg {
-        transform: translateY(-2px);
-    }
-
-    /* Product Description start's______________________________________________ */
-
-    .product_content {
-        padding: 15px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 2px;
-    }
-
-    .prdctName {
-        word-wrap: break-word;
-        width: 125px;
-    }
-
-    .cart {
-        color: transparent;
-        font-size: 14px;
-        -webkit-text-stroke: 1px red;
-        cursor: pointer;
-        position: absolute;
-        right: 15px;
-        bottom: 145px;
-        transition: 0.2s;
-    }
-
-    .cart.fill {
-        color: red;
-    }
-
-    .aboutProduct {
-        font-size: 12px;
-        color: rgba(0, 0, 0, 0.7);
-        width: 140px;
-        margin-bottom: 5px;
-    }
-
-    .starRevwCnt {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .stars {
-        color: gold;
-        -webkit-text-stroke: 2px gold !important;
-        margin-bottom: -4px;
-    }
-
-    .stars i {
-        font-size: 16px !important;
-    }
-
-    .starHalf {
-        font-size: 16px !important;
-        color: transparent;
-        -webkit-text-stroke: 1px gold !important;
-        transform: scaleX(-1);
-    }
-
-    .prdct_Review_Count {
-        font-size: 12px;
-    }
 
 }
 
@@ -1079,6 +706,12 @@ body.active {
 }
 
 @media screen and (max-width: 450px) {
+
+    .navLinks span a {
+        color: rgb(0, 95, 159);
+        filter: drop-shadow(0px 0px 2px white);
+        padding: 5px;
+    }
 
     /* Hero Section */
 

@@ -33,6 +33,7 @@ const supabaseApi = supabase.createClient('https://xyowgkiynvypiblztdjk.supabase
     const navContainer = document.getElementById('navContainer');
     const toggleBar = document.getElementById('toggleBar');
     const navLinks = document.getElementById('navLinks');
+    const bars = document.querySelectorAll('.bar');
     // Check if scrollbar is on top of the window or not__________________
     {
         window.addEventListener("scroll", () => {
@@ -47,6 +48,7 @@ const supabaseApi = supabase.createClient('https://xyowgkiynvypiblztdjk.supabase
             navContainer.classList.toggle('active');
             toggleBar.classList.toggle('active');
             navLinks.classList.toggle('active');
+            bars.forEach(obj => obj.classList.toggle('active'))
             document.body.classList.toggle('active')
             window.scrollTo({ top: 0, behavior: 'smooth' });
         })
@@ -435,52 +437,52 @@ products.forEach((products, index) => {
 // NewsLetter_____________________________________________________________
 
 {
-const emailRagex = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+    const emailRagex = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
 
-const subscribeInput = document.getElementById('letterMail');
+    const subscribeInput = document.getElementById('letterMail');
 
-subscribeInput.addEventListener('keypress', (event) => {
-    (event.key === 'Enter') ? SubscribeToNewsLetter() : null;
-})
+    subscribeInput.addEventListener('keypress', (event) => {
+        (event.key === 'Enter') ? SubscribeToNewsLetter() : null;
+    })
 
-function SubscribeToNewsLetter() {
+    function SubscribeToNewsLetter() {
 
-    if (!subscribeInput.value.trim()) {
-        Swal.fire({
-            icon: "error",
-            title: "Input can't be empty",
-            text: "Enter your email address"
-        });
-    }
-    else if (!emailRagex.test(subscribeInput.value)) {
-        Swal.fire({
-            icon: "error",
-            title: "Email is not correct",
-            text: "Check your email address"
-        });
-    }
-    else {
-        Swal.fire({
-            icon: "success",
-            title: "Subscription confirmed!",
-            text: " You’ll now receive our latest news, tips, and updates straight to your email.",
-            showConfirmButton: false,
-            timer: 4000,
-            timerProgressBar: true,    // shows progress line at top
-            allowOutsideClick: true,   // let user click outside to close
-            allowEscapeKey: true,       // allow ESC key to close.
-            didOpen: () => {
-                const progressBar = Swal.getTimerProgressBar();
-                if (progressBar) {
-                    progressBar.style.background = "dodgerblue"; // 💙 color for progress bar
-                    progressBar.style.height = "6px";            // slightly thicker line
+        if (!subscribeInput.value.trim()) {
+            Swal.fire({
+                icon: "error",
+                title: "Input can't be empty",
+                text: "Enter your email address"
+            });
+        }
+        else if (!emailRagex.test(subscribeInput.value)) {
+            Swal.fire({
+                icon: "error",
+                title: "Email is not correct",
+                text: "Check your email address"
+            });
+        }
+        else {
+            Swal.fire({
+                icon: "success",
+                title: "Subscription confirmed!",
+                text: " You’ll now receive our latest news, tips, and updates straight to your email.",
+                showConfirmButton: false,
+                timer: 4000,
+                timerProgressBar: true,    // shows progress line at top
+                allowOutsideClick: true,   // let user click outside to close
+                allowEscapeKey: true,       // allow ESC key to close.
+                didOpen: () => {
+                    const progressBar = Swal.getTimerProgressBar();
+                    if (progressBar) {
+                        progressBar.style.background = "dodgerblue"; // 💙 color for progress bar
+                        progressBar.style.height = "6px";            // slightly thicker line
+                    }
                 }
-            }
-        });
-        subscribeInput.value = "";
-    }
+            });
+            subscribeInput.value = "";
+        }
 
-}
+    }
 }
 
 // CopyRight-Claim Date___________________________________

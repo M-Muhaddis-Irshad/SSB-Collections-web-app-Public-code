@@ -102,7 +102,7 @@ abbr a img:hover {
     justify-content: center;
     gap: 5px;
     cursor: pointer;
-    
+
 }
 
 /* .navbarToggler:hover {} */
@@ -117,6 +117,9 @@ abbr a img:hover {
     transition: all 0.2s ease-in-out;
 }
 
+.bar.active {
+    background-color: rgb(123, 0, 0);
+}
 
 /* Navbar Toggler (HamBurger) */
 
@@ -134,27 +137,65 @@ abbr a img:hover {
 
 /* Hero Section */
 
-
 .hero_section {
+    position: relative;
+    height: 300px;
+    overflow: hidden;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: 10px;
-    margin-bottom: 20px;
-    padding-block: 60px;
-    background-color: dodgerblue;
+    justify-content: center;
 }
 
-.welcome {
-    color: white;
-    font-weight: bold;
+.bg_video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: auto;
+    object-fit: cover;
+    z-index: -2;
 }
 
-.welcome_msg {
-    color: white;
-    font-size: 20px;
+.actl_video {
+    width: 100%;
+    height: 300px;
 }
 
+.video_overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+.hero_content {
+    color: #fff;
+    text-align: center;
+    animation: fadeInUp 1.5s ease forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.hero_content h1 {
+    font-size: 44.8px;
+    margin-bottom: 16px;
+    font-weight: 700;
+}
+
+.hero_content span {
+    color: #00bfff;
+}
+
+.hero_content p {
+    font-size: 16.6px;
+    opacity: 0.9;
+    margin-bottom: 32px;
+}
+
+/* Button */
 .hero_sect_btn {
     color: dodgerblue;
     font-weight: 600;
@@ -168,12 +209,24 @@ abbr a img:hover {
 .hero_sect_btn:hover {
     color: white;
     background-color: transparent;
-    border-color: cyan;
+    border-color: dodgerblue;
     transform: scale(1.1);
 }
 
-/* Hero Section */
 
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hero Section */
 
 
 
@@ -195,6 +248,7 @@ abbr a img:hover {
 }
 
 .product_heading {
+    color: white;
     font-weight: 700;
 }
 

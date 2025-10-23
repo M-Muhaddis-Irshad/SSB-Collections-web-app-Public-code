@@ -483,149 +483,59 @@ heart.addEventListener('click', () => {
 
 
 
-// Hover Effects on Cards_____________________________________________________
-const Card = document.getElementById('card');
-const cardImage = document.getElementById('image');
-const content = document.getElementById('content');
+// NewsLetter_____________________________________________________________
 
-Card.addEventListener("mouseover", () => {
-    cardImage.style.backgroundImage = `url(${image2})`;
-    cardImage.classList.add('transformImg');
-    content.classList.add('transform');
-})
+{
+    const emailRagex = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
 
-Card.addEventListener("mouseout", () => {
-    cardImage.style.backgroundImage = `url(${image})`;
-    cardImage.classList.remove('transformImg');
-    content.classList.remove('transform');
-})
+    const subscribeInput = document.getElementById('letterMail');
 
+    subscribeInput.addEventListener('keypress', (event) => {
+        (event.key === 'Enter') ? SubscribeToNewsLetter() : null;
+    })
 
+    function SubscribeToNewsLetter() {
 
-// NewsLetter Start's_____________________________________________________________
+        if (!subscribeInput.value.trim()) {
+            Swal.fire({
+                icon: "error",
+                title: "Input can't be empty",
+                text: "Enter your email address"
+            });
+        }
+        else if (!emailRagex.test(subscribeInput.value)) {
+            Swal.fire({
+                icon: "error",
+                title: "Email is not correct",
+                text: "Check your email address"
+            });
+        }
+        else {
+            Swal.fire({
+                icon: "success",
+                title: "Subscription confirmed!",
+                text: " You’ll now receive our latest news, tips, and updates straight to your email.",
+                showConfirmButton: false,
+                timer: 4000,
+                timerProgressBar: true,    // shows progress line at top
+                allowOutsideClick: true,   // let user click outside to close
+                allowEscapeKey: true,       // allow ESC key to close.
+                didOpen: () => {
+                    const progressBar = Swal.getTimerProgressBar();
+                    if (progressBar) {
+                        progressBar.style.background = "dodgerblue"; // 💙 color for progress bar
+                        progressBar.style.height = "6px";            // slightly thicker line
+                    }
+                }
+            });
+            subscribeInput.value = "";
+        }
 
-const emailRagex = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
-
-const subscribeInput = document.getElementById('letterMail');
-
-function SubscribeEmailChecking() {
-
-    if (!subscribeInput.value.trim()) {
-        Swal.fire({
-            icon: "error",
-            title: "Input can't be empty",
-            text: "Enter your email address"
-        });
     }
-    else if (!emailRagex.test(subscribeInput.value)) {
-        Swal.fire({
-            icon: "error",
-            title: "Email is not correct",
-            text: "Check your email address"
-        });
-    }
-    else {
-        Swal.fire({
-            icon: "success",
-            title: "Subscription confirmed!",
-            text: " You’ll now receive our latest news, tips, and updates straight to your email."
-        });
-        subscribeInput.value = "";
-    }
-
 }
-
 
 // CopyRight-Claim Date___________________________________
 
 const d = new Date();
 
 const year = document.getElementById('year').innerText = d.getFullYear();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            // <div class="card" id="card">
-    
-            //     <div class="img_div" id="image" style="background-image: url(${image});"></div>
-                
-            //     <div class="product_content">
-    
-            //         <div class="prdctName_n_Hrt">
-            //             <h2 class="prdctName">${name}</h2>
-            //             <i class="heart material-icons" id="heart" title="Like">favorite</i>
-    
-            //         </div>
-    
-                    
-            //         <h5 class="descriptionHeading">Description</h5>
-
-            //         <h6 class="descriptionProduct">${description}</h6>
-    
-            //         <div class="starRevwCnt">
-            //             <span class="stars">
-            //                 <h4 class="star material-icons">star</h4>
-            //                 <h4 class="star material-icons">star</h4>
-            //                 <h4 class="star material-icons">star</h4>
-            //                 <h4 class="star material-icons">star</h4>
-            //                 <h4 class="starHalf material-icons">star_half</h4>
-            //             </span>
-            //             <h4 class="prdct_Review_Count">(${reviews} Reviews)</h4>
-            //         </div>
-    
-            //         <h4 class="prdctPrice">Rs${price}</h4>
-            //     </div>
-    
-            // </div>
