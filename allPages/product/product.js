@@ -446,6 +446,9 @@ const fetchData = async () => {
 }
 fetchData()
 
+
+// Process for making product card from title which is get from a Search Params_______________________________
+
 let PrdctTitle;
 
 const searchParams = new URLSearchParams(window.location.search);
