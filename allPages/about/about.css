@@ -195,20 +195,31 @@ abbr a img:hover {
 
 /* Button */
 .shopNow_btn {
-    padding: 10px 28px;
-    background-color: #00bfff;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    font-size: 17px;
-    cursor: pointer;
-    transition: 0.3s ease;
+    font-weight: 600;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 10px 20px;
+    border: 1px solid dodgerblue;
+    border-radius: 8px;
+    backdrop-filter: blur(5px);
+    transition: all 0.5s;
 }
 
 .shopNow_btn:hover {
-    background-color: #007acc;
-    transform: scale(1.05);
+    background-color: white;
+    border-color: transparent;
+    transform: scale(1.1);
 }
+
+.shopNow_btn a {
+    text-decoration: none;
+    color: white;
+    transition: 0.5s;
+}
+
+.shopNow_btn:hover a {
+    color: dodgerblue !important;
+}
+
 
 @keyframes fadeInUp {
     from {
