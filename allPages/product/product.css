@@ -105,18 +105,18 @@ abbr a img:hover {
 
 }
 
-/* .navbarToggler:hover {} */
-
 .bar {
     display: block;
     width: 35px;
     height: 4px;
-    /* margin: 5px auto; */
-    background-color: lightslategrey;
+    background-color: rgb(0, 83, 166);
     border-radius: 5px;
     transition: all 0.2s ease-in-out;
 }
 
+.bar.active {
+    background-color: rgb(123, 0, 0);
+}
 
 /* Navbar Toggler (HamBurger) */
 
@@ -236,39 +236,39 @@ abbr a img:hover {
     transition: all 0.3s;
 }
 
-/* 
+
 .cards:hover {
     background-color: rgb(0, 111, 221) !important;
     transform: translateY(-5px);
     filter: drop-shadow(0px 8px 4px rgba(0, 0, 0, 0.450));
-    box-shadow: 0px 2px 5px black;
+    /* box-shadow: 0px 2px 5px black; */
     transform: translateY(-2px);
-
 }
-*/
+
 
 
 .img_div {
     width: 450px !important;
-    height: 440px !important;
-    background-size: 450px 440px;
+    height: 450px !important;
+    background-size: 450px 450px;
     background-repeat: no-repeat;
     border-radius: 8px 0 0 8px;
     border: none;
-    transition: all 0.2s;
+    transition: all 0.3s;
 }
 
-.img_div.transformImg {
+/* .img_div.transformImg {
     transform: translateY(-2px);
-}
+} */
 
 /* Product Description start's______________________________________________ */
 
 .product_content {
     width: 506px !important;
     max-width: 506px !important;
-    height: 440px;
+    height: 450px;
     padding: 15px;
+    padding-bottom: 10px;
     background-color: rgb(0, 113, 189) !important;
     border-radius: 0 8px 8px 0;
     display: flex;
@@ -628,11 +628,16 @@ ul {
         display: flex;
     }
 
-
+    .navLinks span{
+        width: 100%;
+    }
 
     .navLinks span a {
+        display: block;
+        font-size: larger;
+        width: 100%;
         color: rgb(0, 225, 255);
-        padding: 5px;
+        padding: 10px 20px;
     }
 
     .navLinks span a:hover {
@@ -640,6 +645,10 @@ ul {
         background-color: rgb(72, 164, 255);
         border-radius: 10px;
         box-shadow: 0px 0px 10px rgb(0, 0, 0, 0.5);
+    }
+
+    .navLinks span a::after {
+        content: none;
     }
 
     .navbarToggler {

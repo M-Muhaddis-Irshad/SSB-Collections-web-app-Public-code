@@ -416,7 +416,7 @@ products.forEach((products, index) => {
         });
 
 
-        // // Cards hover effect_____________________________________________________________________---
+        // Cards hover effect_____________________________________________________________________---
         const card = document.getElementById(`card-${index}`);
         const img = document.getElementById(`image-${index}`);
 

@@ -1,8 +1,12 @@
+const supabaseApi = supabase.createClient('https://xyowgkiynvypiblztdjk.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inh5b3dna2l5bnZ5cGlibHp0ZGprIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjA0NDAyNDEsImV4cCI6MjA3NjAxNjI0MX0.pYmvrg0D6DSrLqI-A4IALR3Eoh_lex3vdwJ26wjsbnk')
+
+
 // NavBar toggling__________________________________________
 {
     const navContainer = document.getElementById('navContainer');
     const toggleBar = document.getElementById('toggleBar');
     const navLinks = document.getElementById('navLinks');
+    const bars = document.querySelectorAll('.bar');
     // Check if scrollbar is on top of the window or not__________________
     {
         window.addEventListener("scroll", () => {
@@ -17,6 +21,7 @@
             navContainer.classList.toggle('active');
             toggleBar.classList.toggle('active');
             navLinks.classList.toggle('active');
+            bars.forEach(obj => obj.classList.toggle('active'))
             document.body.classList.toggle('active')
             window.scrollTo({ top: 0, behavior: 'smooth' });
         })
@@ -406,7 +411,40 @@ const products = [
     },
 ]
 
-// Check Search Parameters for find the card from title__________________________________________
+// Insert products details to supabase______________________________________
+
+// for (let i = 0; i < products.length; i++) {
+//     const allProducts = products[i];
+//     const { title, image, image2, name, description1, description2, description3, description4, reviews, price, category } = allProducts
+//     // console.log(title, image, image2, name, description1, description2, description3, description4, reviews, price, category);
+
+//     const insertData = async () => {
+//         const { error } = await supabaseApi
+//             .from('ProductsData')
+//             .insert([
+//                 // { id: 1, name: 'Mordor' },
+//                 {
+//                     name: name, description1: description1, description2: description2,
+//                     description3: description3, description4: description4,
+//                     reviews: reviews, price: price, title: title, category: category
+//                 },
+//             ])
+//         if (error) {
+//             console.log(error.message);
+//             return
+//         }
+//     }
+//     // insertData()
+// }
+
+// Fetct products details from supabase_____________________________________
+const fetchData = async () => {
+    const { data, error } = await supabaseApi
+        .from('ProductsData')
+        .select('*')
+        error ? console.log(error.message) : console.log(typeof data);
+}
+fetchData()
 
 let PrdctTitle;
 
@@ -470,8 +508,23 @@ Container.innerHTML = `
             </div>
 
 `
+// Cards hover effect_____________________________________________________________________---
+setTimeout(() => {
 
+    const card = document.getElementById('card');
 
+    const img = document.getElementById(`image`);
+
+    card.addEventListener('mouseover', () => {
+        img.style.backgroundImage = `url(${image2})`;
+        // img.classList.add('transformImg');
+    })
+    card.addEventListener('mouseout', () => {
+        img.style.backgroundImage = `url(${image})`;
+        // img.classList.remove('transformImg');
+    })
+
+}, 0);
 
 // Heart Icon fill/empty function___________________________________________________________
 

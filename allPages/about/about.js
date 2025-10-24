@@ -4,7 +4,7 @@
     const toggleBar = document.getElementById('toggleBar');
     const navLinks = document.getElementById('navLinks');
     const bars = document.querySelectorAll('.bar');
-    // console.log(typeof bars ,bars);
+
     // Check if scrollbar is on top of the window or not__________________
     {
         window.addEventListener("scroll", () => {
