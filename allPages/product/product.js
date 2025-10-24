@@ -411,41 +411,62 @@ const products = [
     },
 ]
 
-// Insert products details to supabase______________________________________
+// Supabase Insert Query____________________________________________
+{// Insert products details to supabase______________________________________
 
-// for (let i = 0; i < products.length; i++) {
-//     const allProducts = products[i];
-//     const { title, image, image2, name, description1, description2, description3, description4, reviews, price, category } = allProducts
-//     // console.log(title, image, image2, name, description1, description2, description3, description4, reviews, price, category);
+    // for (let i = 0; i < products.length; i++) {
+    //     const allProducts = products[i];
+    //     const { title, image, image2, name, description1, description2, description3, description4, reviews, price, category } = allProducts
+    //     // console.log(title, image, image2, name, description1, description2, description3, description4, reviews, price, category);
 
-//     const insertData = async () => {
-//         const { error } = await supabaseApi
-//             .from('ProductsData')
-//             .insert([
-//                 // { id: 1, name: 'Mordor' },
-//                 {
-//                     name: name, description1: description1, description2: description2,
-//                     description3: description3, description4: description4,
-//                     reviews: reviews, price: price, title: title, category: category
-//                 },
-//             ])
-//         if (error) {
-//             console.log(error.message);
-//             return
-//         }
-//     }
-//     // insertData()
-// }
+    //     const insertData = async () => {
+    //         const { error } = await supabaseApi
+    //             .from('ProductsData')
+    //             .insert([
+    //                 // { id: 1, name: 'Mordor' },
+    //                 {
+    //                     name: name, description1: description1, description2: description2,
+    //                     description3: description3, description4: description4,
+    //                     reviews: reviews, price: price, title: title, category: category
+    //                 },
+    //             ])
+    //         if (error) {
+    //             console.log(error.message);
+    //             return
+    //         }
+    //     }
+    //     // insertData()
+    // }
 
-// Fetct products details from supabase_____________________________________
-const fetchData = async () => {
-    const { data, error } = await supabaseApi
-        .from('ProductsData')
-        .select('*')
-        error ? console.log(error.message) : console.log(typeof data);
+    // Fetct products details from supabase_____________________________________
 }
-fetchData()
 
+// Query for fetch data from Supabase_______________________________
+{
+    const fetchData = async () => {
+        const { data, error } = await supabaseApi
+            .from('ProductsData')
+            .select('*')
+        error ? console.log(error.message) : console.log(data);
+    }
+    fetchData()
+}
+
+async () => {
+    // supabaseApi
+    //     .channel('room1')
+    //     .on('postgres_changes', { event: '*', schema: 'public', table: 'ProductsData' }, payload => {
+    //         console.log('Change received!', payload)
+    //     })
+    //     .subscribe()
+
+    supabase
+        .channel('room1')
+        .on('postgres_changes', { event: 'INSERT', schema: 'public', table: 'ProductsData' }, payload => {
+            console.log('Change received!', payload)
+        })
+        .subscribe()
+}
 
 // Process for making product card from title which is get from a Search Params_______________________________
 
