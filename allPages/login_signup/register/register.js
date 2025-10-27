@@ -36,17 +36,18 @@ const createUser = async (name, email, password) => {
     });
 
     setTimeout(() => {
-        window.location.href = '../login/login.html';
+        window.location.href = '../../../index.html';
     }, 1500);
 }
 
+// Inputs___________________________
+const userName = document.getElementById('nameInp');
+const email = document.getElementById('emailInp');
+const password = document.getElementById('passwordInp');
+
+
 // Checking inputs before creating user_______________________________
 function register() {
-
-    // Inputs___________________________
-    const userName = document.getElementById('nameInp');
-    const email = document.getElementById('emailInp');
-    const password = document.getElementById('passwordInp');
 
     // Error messages___________________________
     const nameErr = document.querySelector('.nameErr');
@@ -93,7 +94,7 @@ function register() {
         }
 
         // Check Password_____________________
-        if (inputs === password && password.value.length < 8) {
+        if (inputs === password && password.value.length < 6) {
             password.focus()
             password.classList.add('eror');
             passErr.classList.add('showErr');
@@ -119,17 +120,24 @@ function register() {
 {
     const inputs = document.querySelectorAll('input');
 
-    inputs.forEach(input => {
+    inputs.forEach(
 
-        input.addEventListener('focus', () => {
-            const shadow = input.parentElement.querySelector('.inputShadow');
-            shadow.classList.add('active')
-        })
+        input => {
 
-        input.addEventListener('blur', () => {
-            const shadow = input.parentElement.querySelector('.inputShadow');
-            shadow.classList.remove('active')
-        })
+            input.addEventListener('keypress' , (event) => {
+                (event.key === 'Enter') ? register() : null
+            })
 
-    });
+            input.addEventListener('focus', () => {
+                const shadow = input.parentElement.querySelector('.inputShadow');
+                shadow.classList.add('active')
+            })
+
+            input.addEventListener('blur', () => {
+                const shadow = input.parentElement.querySelector('.inputShadow');
+                shadow.classList.remove('active')
+            })
+
+        }
+    );
 }

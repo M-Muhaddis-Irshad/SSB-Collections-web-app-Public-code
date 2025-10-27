@@ -2,31 +2,47 @@ const supabaseApi = supabase.createClient('https://xyowgkiynvypiblztdjk.supabase
 
 // console.log(supabaseApi);
 
-// Initially check that User is loggedin or not_____________________________
+{// LogOut Query/Function____________________________
+    const logOutUser = async () => {
+        const { error } = await supabaseApi.auth.signOut({ scope: 'local' })
+    }
 
-{
-    // const isUserLoggedIn = async () => {
-    //     const { data: {session}, error } = await supabaseApi.auth.getSession()
-
-    //     if (session == null) {
-    //         Swal.fire({
-    //             title: "User is not log in",
-    //             icon: "error",
-    //             showConfirmButton: false,
-    //             timer: 1000
-    //         });
-    //         setTimeout(() => {
-    //             window.location.href = 'allPages/login_signup/login/login.html';
-    //         }, 1000);
-    //     }
-    //     else {
-    //         console.log(error);
-    //     }
-
-    // }
-
-    // isUserLoggedIn()
+    // logOutUser()
 }
+
+let userEmail;
+let userName;
+
+{// Initially check that User is loggedin or not_____________________________
+
+    const isUserLoggedIn = async () => {
+        const { data: { session }, error } = await supabaseApi.auth.getSession()
+
+        if (session === null) {
+            Swal.fire({
+                title: "User is not log in",
+                icon: "error",
+                showConfirmButton: false,
+                timer: 1000
+            });
+            setTimeout(() => {
+                window.location.href = 'allPages/login_signup/login/login.html';
+            }, 1000);
+        }
+        else {
+            const { user: { user_metadata: { email, first_name } } } = session
+            return {email, first_name}
+        }
+
+    }
+
+    
+    isUserLoggedIn().then( (userData) => {
+        if(!userData)  {return}
+        console.log(userData)
+    })
+}
+
 
 // NavBar toggling__________________________________________
 {

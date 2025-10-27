@@ -412,18 +412,19 @@ const products = [
 ]
 
 // Supabase Insert Query____________________________________________
-{// Insert products details to supabase______________________________________
+{
+    // Insert products details to supabase______________________________________
 
     // for (let i = 0; i < products.length; i++) {
     //     const allProducts = products[i];
     //     const { title, image, image2, name, description1, description2, description3, description4, reviews, price, category } = allProducts
-    //     // console.log(title, image, image2, name, description1, description2, description3, description4, reviews, price, category);
+    //     console.log(title, image, image2, name, description1, description2, description3, description4, reviews, price, category);
 
     //     const insertData = async () => {
     //         const { error } = await supabaseApi
     //             .from('ProductsData')
     //             .insert([
-    //                 // { id: 1, name: 'Mordor' },
+    //                    { id: 1, name: 'Mordor' },
     //                 {
     //                     name: name, description1: description1, description2: description2,
     //                     description3: description3, description4: description4,
@@ -452,44 +453,42 @@ const products = [
     fetchData()
 }
 
-async () => {
-    // supabaseApi
-    //     .channel('room1')
-    //     .on('postgres_changes', { event: '*', schema: 'public', table: 'ProductsData' }, payload => {
-    //         console.log('Change received!', payload)
-    //     })
-    //     .subscribe()
 
-    supabase
-        .channel('room1')
-        .on('postgres_changes', { event: 'INSERT', schema: 'public', table: 'ProductsData' }, payload => {
-            console.log('Change received!', payload)
-        })
-        .subscribe()
-}
+supabaseApi
+    .channel('room1')
+    .on('postgres_changes', { event: '*', schema: 'public', table: 'ProductsData' }, payload => {
+        console.log('Change received!', payload)
+        // console.log('Change received!', payload.new)
+    })
+    .subscribe()
 
-// Process for making product card from title which is get from a Search Params_______________________________
+const channels = supabaseApi.getChannels('room1')
 
-let PrdctTitle;
-
-const searchParams = new URLSearchParams(window.location.search);
-
-searchParams.forEach((title, key) => {
-    PrdctTitle = title;
-});
-
-const currentProduct = products.filter((products) => products.title === PrdctTitle)[0];
+console.log(channels);
 
 
-// Product Card creating_________________________________________________________
 
-const { title, image, image2, name, description1, description2, description3, description4, reviews, price } = currentProduct
+{// Process for making product card from title which is get from a Search Params_______________________________
 
-// console.log(`${title} ${image} ${image2} ${name} ${description} ${reviews} ${price}`);
+    let PrdctTitle;
 
-const PageTitle = document.title = `S.S.B Collections | ${name}`;
+    const searchParams = new URLSearchParams(window.location.search);
 
-Container.innerHTML = `
+    searchParams.forEach((title, key) => PrdctTitle = title);
+
+
+    const currentProduct = products.filter((products) => products.title === PrdctTitle)[0];
+
+
+    // Product Card creating_________________________________________________________
+
+    const { title, image, image2, name, description1, description2, description3, description4, reviews, price } = currentProduct
+
+    // console.log(`${title} ${image} ${image2} ${name} ${description} ${reviews} ${price}`);
+
+    const PageTitle = document.title = `S.S.B Collections | ${name}`;
+
+    Container.innerHTML = `
             <div class="cards" id="card">
 
                 <div class="img_div" id="image" style="background-image: url(${image});"></div>
@@ -532,32 +531,32 @@ Container.innerHTML = `
             </div>
 
 `
-// Cards hover effect_____________________________________________________________________---
-setTimeout(() => {
+    // Cards hover effect_____________________________________________________________________---
+    setTimeout(() => {
 
-    const card = document.getElementById('card');
+        const card = document.getElementById('card');
 
-    const img = document.getElementById(`image`);
+        const img = document.getElementById(`image`);
 
-    card.addEventListener('mouseover', () => {
-        img.style.backgroundImage = `url(${image2})`;
-        // img.classList.add('transformImg');
-    })
-    card.addEventListener('mouseout', () => {
-        img.style.backgroundImage = `url(${image})`;
-        // img.classList.remove('transformImg');
-    })
+        card.addEventListener('mouseover', () => {
+            img.style.backgroundImage = `url(${image2})`;
+            // img.classList.add('transformImg');
+        })
+        card.addEventListener('mouseout', () => {
+            img.style.backgroundImage = `url(${image})`;
+            // img.classList.remove('transformImg');
+        })
 
-}, 0);
+    }, 0);
 
-// Heart Icon fill/empty function___________________________________________________________
+    // Heart Icon fill/empty function___________________________________________________________
 
-const heart = document.getElementById('heart');
-heart.addEventListener('click', () => {
-    heart.classList.toggle('fill');
-    heart.title = heart.classList.contains('fill') ? 'UnLike' : 'Like';
-});
-
+    const heart = document.getElementById('heart');
+    heart.addEventListener('click', () => {
+        heart.classList.toggle('fill');
+        heart.title = heart.classList.contains('fill') ? 'UnLike' : 'Like';
+    });
+}
 
 
 // NewsLetter_____________________________________________________________
