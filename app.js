@@ -29,7 +29,7 @@ console.log(userEmail, userName);
                 timer: 1000
             });
             setTimeout(() => {
-                window.location.href = 'allPages/login_signup/login/login.html';
+                window.location.href = 'allPages/authentication/login/login.html';
             }, 1000);
 
             localStorage.removeItem('userEmail');
