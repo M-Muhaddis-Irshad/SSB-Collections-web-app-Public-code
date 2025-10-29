@@ -2,7 +2,7 @@ const supabaseApi = supabase.createClient('https://xyowgkiynvypiblztdjk.supabase
 
 
 // Initially check that user is already loggedin or not if logged In redirect user to home page______________________
-const isUserLoggedIn = async () => {
+const initiallyCheckUser = async () => {
     const { data: { session }, error } = await supabaseApi.auth.getSession()
 
     if (session !== null) {
@@ -12,21 +12,20 @@ const isUserLoggedIn = async () => {
             showConfirmButton: false,
             timer: 1000
         });
-        // setTimeout(() => {
-        //     window.location.href = '../../../index.html';
-        // }, 1000);
-    }
-    
-    console.log(session);
-    
+        setTimeout(() => {
+            window.location.href = '../../../index.html';
+        }, 1000);
 
-    const { data: { user } } = await supabaseApi.auth.getUser()
-    
-    console.log(user);
+        const { user: { user_metadata: { email, first_name } } } = session
+
+        localStorage.setItem('userName', first_name);
+        localStorage.setItem('userEmail', email);
+        return
+    }
 
 }
 
-isUserLoggedIn()
+initiallyCheckUser()
 
 
 // Login the user after checking all the possible errrors________________________
@@ -41,6 +40,7 @@ const login = async (mail, pass) => {
         Swal.fire({
             title: error.message,
             icon: "error",
+            text: `If don't have an account please register`,
             showConfirmButton: false,
             timer: 2000
         });
@@ -56,16 +56,37 @@ const login = async (mail, pass) => {
 
     setTimeout(() => {
         window.location.pathname = '../../../index.html';
-    }, 1500);
+    }, 1000);
+
+    {//After login save the user data in local storage
+        const { data: { session }, error } = await supabaseApi.auth.getSession()
+        const { user: { user_metadata: { email, first_name } } } = session
+        localStorage.setItem('userName', first_name);
+        localStorage.setItem('userEmail', email);
+    }
 
 }
 
 
-function check() {
+// All Inputs______________________________________
+const inputs = document.querySelectorAll('input');
 
-    // Inputs___________________________________
-    const email = document.getElementById('emailInp');
-    const password = document.getElementById('passwordInp');
+{// Stop the default behavior of <form>____________________________________
+
+    const form = document.querySelector('form');
+    form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        check()
+        inputs.forEach(inputs => inputs.blur())
+    })
+}
+
+
+// Inputs___________________________________
+const email = document.getElementById('emailInp');
+const password = document.getElementById('passwordInp');
+
+function check() {
 
     // Error messages___________________________________
     const mailErr = document.querySelector('.emailError');
@@ -85,7 +106,7 @@ function check() {
         mailErr.classList.remove('showErr');
     }
 
-    if (password.value.length < 6) {
+    if (password.value.length < 8) {
         password.focus()
         password.classList.add('eror');
         passErr.classList.add('showErr');
@@ -103,48 +124,18 @@ function check() {
 
 
 
-// Inputs shadow on focus block_____________________________________
-{
-    const inputs = document.querySelectorAll('label input');
+{// Inputs shadow on focus block_____________________________________
+    inputs.forEach((input) => {
 
-    inputs.forEach(
-        input => {
+        input.addEventListener('focus', () => {
+            const shadow = input.parentElement.querySelector('.inputShadow');
+            shadow.classList.add('active')
+        })
 
-            input.addEventListener('keypress', (event) => {
-                (event.key === 'Enter') ? check() : null
-            })
+        input.addEventListener('blur', () => {
+            const shadow = input.parentElement.querySelector('.inputShadow');
+            shadow.classList.remove('active')
+        })
 
-            input.addEventListener('focus', () => {
-                const shadow = input.parentElement.querySelector('.inputShadow');
-                shadow.classList.add('active')
-            })
-
-            input.addEventListener('blur', () => {
-                const shadow = input.parentElement.querySelector('.inputShadow');
-                shadow.classList.remove('active')
-            })
-
-        }
-    );
+    });
 }
-
-// let city = prompt('Enter City Name')
-// let hello = 'myname';
-// let nums = 324;
-// const weather = async () => {
-//     const weatherApi = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=a097eb39ebf73787c3b509888e03d178&units=metric`);
-//     const response = await weatherApi.json()
-//     console.log(
-//         `
-//         Weather Api: ${weatherApi.constructor}     
-        
-//         String: ${hello.constructor}
-        
-//         Number: ${nums.constructor}
-//         Response: ${response.constructor}
-//         `
-//     );
-
-// }
-
-// weather()

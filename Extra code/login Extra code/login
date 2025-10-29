@@ -1,0 +1,21 @@
+
+// let city = prompt('Enter City Name')
+// let hello = 'myname';
+// let nums = 324;
+// const weather = async () => {
+//     const weatherApi = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=a097eb39ebf73787c3b509888e03d178&units=metric`);
+//     const response = await weatherApi.json()
+//     console.log(
+//         `
+//         Weather Api: ${weatherApi.constructor}     
+        
+//         String: ${hello.constructor}
+        
+//         Number: ${nums.constructor}
+//         Response: ${response.constructor}
+//         `
+//     );
+
+// }
+
+// weather()

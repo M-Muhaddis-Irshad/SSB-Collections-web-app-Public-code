@@ -22,32 +22,32 @@
 
     <main>
 
-        <div class="detailContainere">
+        <form class="detailContainere">
 
             <h1 class="textClip">Registration Form</h1>
 
             <label>
-                <input type="text" id="nameInp" placeholder="User Name">
+                <input type="text" id="nameInp" autocomplete="name" placeholder="User Name">
                 <div class="nameErr errorMsg">Enter user name</div>
                 <span class="inputShadow"></span>
             </label>
 
 
             <label>
-                <input type="email" id="emailInp" placeholder="Email">
+                <input type="email" id="emailInp" autocomplete="email" placeholder="Email">
                 <div class="emailError errorMsg">Invalid email address</div>
                 <span class="inputShadow"></span>
             </label>
 
 
             <label>
-                <input type="password" autocomplete="current-password" id="passwordInp" placeholder="Password">
+                <input type="password" id="passwordInp" autocomplete="new-password" placeholder="Password">
                 <div class="passError errorMsg">Password must be at least 8 characters long</div>
                 <span class="inputShadow"></span>
             </label>
 
 
-            <button class="textClip Btn" onclick="register()">
+            <button type="button" class="textClip Btn" onclick="register()">
                 Register
             </button>
 
@@ -58,7 +58,7 @@
             <!-- Shadow -->
             <div class="shadow"></div>
 
-        </div>
+        </form>
 
     </main>
 

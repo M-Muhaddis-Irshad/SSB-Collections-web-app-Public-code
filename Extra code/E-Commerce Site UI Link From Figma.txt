@@ -1114,3 +1114,33 @@ products.forEach((products, index) => {
 
 
         // })
+
+
+
+
+
+
+
+
+
+
+
+        // const { user: { user_metadata: { email, first_name } } } = session
+
+        // return { email, first_name }
+
+    }
+
+    // isUserLoggedIn().then(res => {
+    //     if (!res) return;
+    //     userInfo(res);
+    // })
+    //     .catch(rej => {
+    //         console.error(`Promise Rejected`);
+    //     })
+
+    // const userInfo = async (info) => {
+    //     const { email, first_name: Name } = info
+    //     userEmail = email;
+    //     userName = Name;
+    //     console.log(`Name: ${Name} Email: ${email}`);

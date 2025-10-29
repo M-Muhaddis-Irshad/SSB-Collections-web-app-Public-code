@@ -7,11 +7,14 @@ const supabaseApi = supabase.createClient('https://xyowgkiynvypiblztdjk.supabase
         const { error } = await supabaseApi.auth.signOut({ scope: 'local' })
     }
 
-    // logOutUser()
+    logOutUser()
 }
 
-let userEmail;
-let userName;
+let userEmail = localStorage.getItem('userEmail');
+let userName = localStorage.getItem('userName');
+
+
+console.log(userEmail, userName);
 
 {// Initially check that User is loggedin or not_____________________________
 
@@ -28,19 +31,15 @@ let userName;
             setTimeout(() => {
                 window.location.href = 'allPages/login_signup/login/login.html';
             }, 1000);
-        }
-        else {
-            const { user: { user_metadata: { email, first_name } } } = session
-            return {email, first_name}
+
+            localStorage.removeItem('userEmail');
+            localStorage.removeItem('userName');
         }
 
     }
 
-    
-    isUserLoggedIn().then( (userData) => {
-        if(!userData)  {return}
-        console.log(userData)
-    })
+    isUserLoggedIn()
+
 }
 
 
@@ -484,14 +483,14 @@ products.forEach((products, index) => {
                 text: " You’ll now receive our latest news, tips, and updates straight to your email.",
                 showConfirmButton: false,
                 timer: 4000,
-                timerProgressBar: true,    // shows progress line at top
-                allowOutsideClick: true,   // let user click outside to close
-                allowEscapeKey: true,       // allow ESC key to close.
+                timerProgressBar: true,
+                allowOutsideClick: true,
+                allowEscapeKey: true,
                 didOpen: () => {
                     const progressBar = Swal.getTimerProgressBar();
                     if (progressBar) {
-                        progressBar.style.background = "dodgerblue"; // 💙 color for progress bar
-                        progressBar.style.height = "6px";            // slightly thicker line
+                        progressBar.style.background = "dodgerblue";
+                        progressBar.style.height = "6px";
                     }
                 }
             });
