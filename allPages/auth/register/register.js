@@ -74,7 +74,6 @@ const createUser = async (name, email, password) => {
 const inputs = document.querySelectorAll('input');
 
 {// Stop the default behavior of <form>____________________________________
-
     const form = document.querySelector('form');
     form.addEventListener("submit", (event) => {
         event.preventDefault();
@@ -88,13 +87,14 @@ const userName = document.getElementById('nameInp');
 const email = document.getElementById('emailInp');
 const password = document.getElementById('passwordInp');
 
+// Error messages___________________________
+const nameErr = document.querySelector('.nameErr');
+const mailErr = document.querySelector('.emailError');
+const passErr = document.querySelector('.passError');
+
+
 // Checking inputs before creating user_______________________________
 function register() {
-
-    // Error messages___________________________
-    const nameErr = document.querySelector('.nameErr');
-    const mailErr = document.querySelector('.emailError');
-    const passErr = document.querySelector('.passError');
 
     // All errors_______________________
     const errMsgs = document.querySelectorAll('.errorMsg');
@@ -155,21 +155,13 @@ function register() {
 
     createUser(...inputArr)
 
-
 }
 
-{// Inputs shadow on focus & execute Register function on Enter press_____________________________________
-    inputs.forEach(
-
-        input => {
-            input.addEventListener('focus', () => {
-                const shadow = input.parentElement.querySelector('.inputShadow');
-                shadow.classList.add('active')
-            })
-            input.addEventListener('blur', () => {
-                const shadow = input.parentElement.querySelector('.inputShadow');
-                shadow.classList.remove('active')
-            })
-        }
-    );
+{    inputs.forEach((input) => {
+        window.addEventListener('click', e => {
+            const shadow = input.parentElement.querySelector('.inputShadow');
+            input.classList.remove(`eror`);
+            nameErr.classList.remove('active');
+        })
+    });
 }

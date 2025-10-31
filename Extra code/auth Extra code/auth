@@ -19,3 +19,10 @@
 // }
 
 // weather()
+
+
+
+        // inputs => {
+        //     inputs.addEventListener('keypress', (e)=> {
+        //         e.key === 'Enter' ? register() : null
+        //     })

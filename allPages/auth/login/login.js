@@ -55,7 +55,7 @@ const login = async (mail, pass) => {
     });
 
     setTimeout(() => {
-        window.location.pathname = '../../../index.html';
+        window.location.href = '../../../index.html';
     }, 1000);
 
     {//After login save the user data in local storage
@@ -86,11 +86,11 @@ const inputs = document.querySelectorAll('input');
 const email = document.getElementById('emailInp');
 const password = document.getElementById('passwordInp');
 
-function check() {
+// Error messages___________________________________
+const mailErr = document.querySelector('.emailError');
+const passErr = document.querySelector('.passError');
 
-    // Error messages___________________________________
-    const mailErr = document.querySelector('.emailError');
-    const passErr = document.querySelector('.passError');
+function check() {
 
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
@@ -124,18 +124,10 @@ function check() {
 
 
 
-{// Inputs shadow on focus block_____________________________________
-    inputs.forEach((input) => {
-
-        input.addEventListener('focus', () => {
+{inputs.forEach((input) => {
+        window.addEventListener('click', e => {
             const shadow = input.parentElement.querySelector('.inputShadow');
-            shadow.classList.add('active')
+            input.classList.remove(`eror`);
         })
-
-        input.addEventListener('blur', () => {
-            const shadow = input.parentElement.querySelector('.inputShadow');
-            shadow.classList.remove('active')
-        })
-
     });
 }

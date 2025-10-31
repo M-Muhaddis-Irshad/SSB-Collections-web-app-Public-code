@@ -1,20 +1,18 @@
 const supabaseApi = supabase.createClient('https://xyowgkiynvypiblztdjk.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inh5b3dna2l5bnZ5cGlibHp0ZGprIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjA0NDAyNDEsImV4cCI6MjA3NjAxNjI0MX0.pYmvrg0D6DSrLqI-A4IALR3Eoh_lex3vdwJ26wjsbnk')
 
-// console.log(supabaseApi);
-
 {// LogOut Query/Function____________________________
     const logOutUser = async () => {
-        const { error } = await supabaseApi.auth.signOut({ scope: 'local' })
+        const { error } = await supabaseApi.auth.signOut()
     }
 
-    logOutUser()
+    // logOutUser()
 }
 
 let userEmail = localStorage.getItem('userEmail');
 let userName = localStorage.getItem('userName');
 
 
-console.log(userEmail, userName);
+console.log(`${userEmail} ${userName}`);
 
 {// Initially check that User is loggedin or not_____________________________
 
@@ -29,7 +27,7 @@ console.log(userEmail, userName);
                 timer: 1000
             });
             setTimeout(() => {
-                window.location.href = 'allPages/authentication/login/login.html';
+                window.location.href = 'allPages/auth/login/login.html';
             }, 1000);
 
             localStorage.removeItem('userEmail');
