@@ -1,48 +1,61 @@
 const supabaseApi = supabase.createClient('https://xyowgkiynvypiblztdjk.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inh5b3dna2l5bnZ5cGlibHp0ZGprIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjA0NDAyNDEsImV4cCI6MjA3NjAxNjI0MX0.pYmvrg0D6DSrLqI-A4IALR3Eoh_lex3vdwJ26wjsbnk')
 
-{// LogOut Query/Function____________________________
-    const logOutUser = async () => {
-        const { error } = await supabaseApi.auth.signOut()
-    }
-
-    // logOutUser()
-}
-
 let userEmail = localStorage.getItem('userEmail');
 let userName = localStorage.getItem('userName');
 
+// LogOut Query/Function____________________________
+const logOutUser = async () => {
+    const { error } = await supabaseApi.auth.signOut()
+    error ? console.log(error) : console.log("Logout successfully")
+}
 
-console.log(`${userEmail} ${userName}`);
+// logOutUser()
 
-{// Initially check that User is loggedin or not_____________________________
 
-    const isUserLoggedIn = async () => {
-        const { data: { session }, error } = await supabaseApi.auth.getSession()
+const signupBtn = document.getElementById('signupToSignout');
 
-        if (session === null) {
-            Swal.fire({
-                title: "User is not log in",
-                icon: "error",
-                showConfirmButton: false,
-                timer: 1000
-            });
-            setTimeout(() => {
-                window.location.href = 'allPages/auth/login/login.html';
-            }, 1000);
+// Initially check that User is loggedin or not_____________________________
 
-            localStorage.removeItem('userEmail');
-            localStorage.removeItem('userName');
-        }
+const isUserLoggedIn = async () => {
+    const { data: { session }, error } = await supabaseApi.auth.getSession()
 
+    if (session === null) {
+        Swal.fire({
+            title: "User is not log in",
+            icon: "error",
+            showConfirmButton: false,
+            timer: 1000
+        });
+        setTimeout(() => {
+            window.location.href = 'allPages/auth/login/login.html';
+        }, 1000);
+
+        localStorage.removeItem('userEmail');
+        localStorage.removeItem('userName');
+
+        return
     }
 
-    isUserLoggedIn()
+    signupBtn.innerHTML = `<a href="#" id="signout">Signout</a>`
+    const signoutBtn = document.getElementById('signout');
+    signoutBtn.addEventListener('click', async e => {
+        e.preventDefault()
+        await logOutUser()
+    })
 
 }
 
+isUserLoggedIn()
 
-// NavBar toggling__________________________________________
-{
+supabaseApi
+    .channel('room1')
+    .on('postgres_changes', { event: '*', schema: '*' }, payload => {
+        console.log('Change received!', payload)
+    })
+    .subscribe()
+
+{// NavBar toggling__________________________________________
+
     const navContainer = document.getElementById('navContainer');
     const toggleBar = document.getElementById('toggleBar');
     const navLinks = document.getElementById('navLinks');
