@@ -3,25 +3,45 @@ const supabaseApi = supabase.createClient('https://xyowgkiynvypiblztdjk.supabase
 let userEmail = localStorage.getItem('userEmail');
 let userName = localStorage.getItem('userName');
 
+let stopFunctionFlg = true;
+
 // LogOut Query/Function____________________________
 const logOutUser = async () => {
     const { error } = await supabaseApi.auth.signOut()
-    error ? console.log(error) : console.log("Logout successfully")
+    if (error) {
+        console.log(error)
+    }
+    else {
+        localStorage.removeItem('userEmail');
+        localStorage.removeItem('userName');
+        stopFunctionFlg = false;
+        Swal.fire({
+            title: "SignOut Successfully",
+            icon: "success",
+            showConfirmButton: false,
+            timer: 1500
+        });
+        setTimeout(() => {
+            window.location.reload()
+            window.location.href = 'allPages/auth/login/login.html';
+        }, 1500);
+    }
 }
 
-// logOutUser()
-
-
-const signupBtn = document.getElementById('signupToSignout');
+const signupBtn = document.getElementById('signup');
 
 // Initially check that User is loggedin or not_____________________________
 
 const isUserLoggedIn = async () => {
     const { data: { session }, error } = await supabaseApi.auth.getSession()
 
+    if (!stopFunctionFlg) {
+        return
+    }
+
     if (session === null) {
         Swal.fire({
-            title: "User is not log in",
+            title: "User isn't log in",
             icon: "error",
             showConfirmButton: false,
             timer: 1000
@@ -29,13 +49,12 @@ const isUserLoggedIn = async () => {
         setTimeout(() => {
             window.location.href = 'allPages/auth/login/login.html';
         }, 1000);
-
         localStorage.removeItem('userEmail');
         localStorage.removeItem('userName');
-
         return
     }
 
+    // After checking that session is not empty create a signout button______________________________
     signupBtn.innerHTML = `<a href="#" id="signout">Signout</a>`
     const signoutBtn = document.getElementById('signout');
     signoutBtn.addEventListener('click', async e => {
