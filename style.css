@@ -615,7 +615,7 @@ body.active {
         display: flex;
     }
 
-    .navLinks span{
+    .navLinks span {
         width: 100%;
     }
 
@@ -986,6 +986,7 @@ body.active {
 
 
     .hero_section {
+        height: 400px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -1006,21 +1007,11 @@ body.active {
         font-size: 20px;
     }
 
-    .hero_sect_btn {
-        color: dodgerblue;
-        font-weight: 600;
-        border: none;
-        padding: 10px 20px;
-        border: 1px solid transparent;
-        border-radius: 8px;
-        transition: all 0.5s;
-    }
 
-    .hero_sect_btn:hover {
-        color: white;
-        background-color: transparent;
+
+    /* Button */
+    .hero_sect_btn {
         border-color: cyan;
-        transform: scale(1.1);
     }
 
     /* Hero Section */
